@@ -8,6 +8,7 @@ class HomePage extends Component{
     constructor(){
         super();
         this.state={}
+        this.getItems=this.getItems.bind(this)
     }
 
     displayItems(item){
@@ -23,15 +24,15 @@ class HomePage extends Component{
             let title=parsed.title;
             let price = parsed.price;
             // picture = parsed. picture ?
-        }
-
-
-    return displayItems()
-
+        })
     }
+
+
     render(){
-        <TopComponent/>
-        {this.getItems}
+        return(<div><TopComponent/>
+                {this.getItems()}
+                </div>
+        )
     }
 }
 

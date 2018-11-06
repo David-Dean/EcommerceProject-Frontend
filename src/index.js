@@ -9,7 +9,7 @@ let reducer= function(state, action){
     if(action.type === 'loggedIn'){
         return({...state, username: action.username })
     }
-    if 
+    
 }
 const store = createStore(
     reducer,

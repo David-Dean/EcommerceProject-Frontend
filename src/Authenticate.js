@@ -52,7 +52,7 @@ class Authentication extends Component{
             if (!parsedResponse.success){
                 //change this to show up next to InputBoxs
                 alert("Username or Password are Incorrect")
-            }
+            }else 
             this.props.dispatch({type:'loggedIn', username: this.state.usernameInput})
         })
         
