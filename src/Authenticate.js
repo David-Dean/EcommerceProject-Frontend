@@ -9,9 +9,11 @@ class Authentication extends Component{
             usernameInput : '',
             passwordInput : ''
         }
-        this.handleSubmit=this.handleSubmit.bind(this)
+        this.handleSignupSubmit=this.handleSignupSubmit.bind(this)
+        this.handleLoginSubmit=this.handleLoginSubmit.bind(this)
         this.handleUsernameChange=this.handleUsernameChange.bind(this)
         this.handlePasswordChange=this.handlePasswordChange.bind(this)
+        this.handleLoginOption=this.handleLoginOption.bind(this)
     }
 
     handleSignupSubmit(event){
@@ -70,16 +72,18 @@ class Authentication extends Component{
 
     render(){
         if (this.state.status!=="signed up"){
-            return(<div className='Signup'><form onSubmit={this.handleSignupSubmit}>
-                    Username
-                    <input type='text' onChange={this.handleUsernameChange}/>
-                    Password
-                    <input type='text' onChange={this.handlePasswordChange}/>
-                    Email
-                    <input type='text'/>
-                    <input type="submit"/>
-                </form>
-                <input type='button' onClick={this.handleLoginOption}>Already Signed Up?</input>
+            return(<div className='Signup'>
+                        <img src='/images/logo.png' />
+                        <form onSubmit={this.handleSignupSubmit}>
+                            Username
+                            <input type='text' onChange={this.handleUsernameChange}/>
+                            Password
+                            <input type='text' onChange={this.handlePasswordChange}/>
+                               Email
+                            <input type='text'/>
+                            <input type="submit"/>
+                        </form>
+                    <button onClick={this.handleLoginOption}>Already Signed Up?</button>
                 </div>)
         } 
         return (<div className='Login'>
@@ -96,5 +100,5 @@ class Authentication extends Component{
 }
 
 
-ConnectedAuthentication = connect()(Authentication)
+let ConnectedAuthentication = connect()(Authentication)
 export default ConnectedAuthentication
