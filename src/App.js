@@ -7,14 +7,26 @@ import './App.css';
 
 class App extends Component {
     render() {
+
+      if(this.state.username){
         return (<BrowserRouter>
                   <div className="App">
-                  <TopComponent/>
+
                    <Authentication/>
                   </div>
                 </BrowserRouter>
         );
-    }
+    }else
+    return (  <div>
+                 <TopComponent/>
+
+              </div>)
+
+  
+  }
 }
 
-export default App;
+
+
+let ConnectedApp = connect()(App)
+export default ConnectedApp;

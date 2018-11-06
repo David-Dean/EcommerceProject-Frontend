@@ -6,9 +6,10 @@ import './index.css';
 import App from './App';
 
 let reducer= function(state, action){
-    if(action.type === ''){
-        return({...state, })
+    if(action.type === 'loggedIn'){
+        return({...state, username: action.username })
     }
+    if 
 }
 const store = createStore(
     reducer,
