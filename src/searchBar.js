@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {Link} from 'react-router-dom'
+import {withRouter} from 'react-router';
+import {Link} from  'react-router-dom'
 
 
 class SearchBar extends Component{
@@ -22,7 +23,9 @@ class SearchBar extends Component{
         }).then(x=>x.text()
         ).then(response=>{
             let parsed = JSON.parse(response)
+            console.log(parsed)
             this.props.dispatch({type: 'putSearchResults', res: parsed})
+            this.props.history.push('/searchResults')
         })
     }
 
@@ -39,4 +42,4 @@ class SearchBar extends Component{
 }
 }
 let ConnectedSearchBar = connect()(SearchBar)
-export default ConnectedSearchBar
+export default withRouter(ConnectedSearchBar)

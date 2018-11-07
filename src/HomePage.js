@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import TopComponent from './topComponent.js'
 import SearchResults from './searchResults.js'
+import SideMenu from './sideMenu.js'
 
 
 
@@ -31,13 +32,15 @@ class HomePage extends Component{
     }
 
     render(){
-        return(<div style={{width:'100%'}}>
+        return(<div className="homepage">
             <TopComponent/>
-            <SearchResults/>
+           
+            <SearchResults align-content='flex-end'/>
                 </div>
         )
     }
 }
+
 
 
 let mapStateToProps = function(state){

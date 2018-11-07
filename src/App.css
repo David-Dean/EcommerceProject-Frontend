@@ -30,3 +30,58 @@
     transform: rotate(360deg);
   }
 }
+
+.homepage {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
+  height: 5vh;
+}
+
+.main-container{
+  display: flex;
+}
+
+.items-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+}
+
+.side-menu{
+  height: 95vh
+}
+
+.item {
+  height:200px;
+  margin:20px;
+}
+.top-container-all{
+  display: flex;
+  
+}
+.top-container-right{
+  display: flex;
+  justify-content: flex-end
+}
+.top-container-left{
+  display:flex;
+  justify-content: flex-start
+}
+.sideList{
+  list-style: none
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-button {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+.dropdown-button:focus {
+  background-color: #2980B9;
+}

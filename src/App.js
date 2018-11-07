@@ -5,6 +5,8 @@ import Authentication from './Authenticate'
 import TopComponent from './topComponent.js'
 import HomePage from './HomePage.js'
 import Item from './items.js'
+import SideMenu from './sideMenu.js'
+import ListItemsPage from './listItemsPage.js'
 
 import './App.css';
 
@@ -96,6 +98,7 @@ class App extends Component {
       items: items
     }
     this.renderAllItems=this.renderAllItems.bind(this)
+    this.renderSearchResults=this.renderSearchResults.bind(this)
   }
 
   renderAllItems(){
@@ -109,13 +112,13 @@ class App extends Component {
           itemId={item.itemId} />))
   }
   renderSearchResults(){
-    return searchReturnItems.map(item=>
+    return this.props.searchResults.map(item=>
       (<Item
         category={item.category}
         title={item.title}
         description={item.description}
         price={item.price}
-        source={item.source}
+        source={'/images/africanMask.jpg'}
         itemId={item.itemId} />))
   
            }
@@ -126,8 +129,21 @@ class App extends Component {
     return (<div>Cart</div>)
   }
   renderListItem(){
-    return(<div>LIST ITEM HERE</div>)
+    return(<div><ListItemsPage/></div>)
   }
+  renderMasks(){
+    return null
+  }
+  renderStatues(){
+    return null
+  }
+  renderVases(){
+    return null
+  }
+  renderFossils(){
+    return null
+  }
+
     render() {
 
       if(!this.props.username){
@@ -140,24 +156,49 @@ class App extends Component {
     }else
     return (  <BrowserRouter>
                 <div style={{width:'100%'}}>
-                   
+                   <div className='homepage'>
                     <HomePage/>
-                    <Route exact path='/' render={this.renderAllItems} />
+                    <div className='main-container'>
+                      <SideMenu />
+                      <div className='items-container'>
+                       <Route exact path='/' render={this.renderAllItems} />
+                       <Route exact path='/searchResults' render={this.renderSearchResults} />
+                       </div>
+                      </div>
+                    </div>
                     <Route exact path='/profile' render={this.renderProfile} />
                     <Route exact path='/cart' render={this.renderCart} />
                     <Route exact path='/listItem' render={this.renderListItem}/>
-                    <Route exact path='/searchResults' render={this.renderSearchResults} />
+                    <Route exact path='/masks' render={this.renderMasks}/>
+                    <Route exact path='/statues' render={this.renderStatues}/>
+                    <Route exact path='/vases' render={this.renderVases}/>
+                    <Route exact path='/fossils' render={this.renderFossils}/>
+                   
                  </div>
              </BrowserRouter>)
 
-  
+  {/* <div className="homepage">
+              <HomePage />
+              <div className="main-container">
+                <SideMenu />
+                <div className="items-container">
+                  <Route exact path="/" render={this.renderAllItems} />
+                  <Route
+                    exact
+                    path="/searchResults"
+                    render={this.renderSearchResults}
+                  />
+                </div>
+              </div>
+            </div> */}
   }
 }
 
 
 let mapStateToProps= function(state){
  return {
-   username: state.username
+   username: state.username,
+   searchResults: state.searchResults
  }
 }
 let ConnectedApp = connect(mapStateToProps)(App)

@@ -4,21 +4,22 @@ import {Link} from 'react-router-dom'
 
 
 
+
 class SearchResults extends Component{
    
 
     render(){
-        if(this.props.results===undefined){return(<div></div>)}
+        if(this.props.searchResults===undefined){return(<div></div>)}
     
         let displayResults = function(item){
-            return (<div>
-                <div>item.title</div>
-                <div>item.image</div>
-            </div>)
-
+            return (    <div>
+                            <div>{item.title}</div>
+                            <div>{item.source}</div>
+                        </div>)
         }
+
         return(<div>
-            {this.props.searchResults.map(displayResults)}
+            {/* {this.props.searchResults.map(displayResults)} */}
         </div>)
 }
 }

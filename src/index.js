@@ -13,13 +13,15 @@ let reducer= function(state, action){
         return({...state, items: action.items})
     }
     if (action.type === 'putSearchResults'){
+        
+     
         return {...state, searchResults:action.res}
     }
     return {...state}
 }
 const store = createStore(
     reducer,
-    {username: 'Hey'},
+    {username: 'Hey' },
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 let contents = (<Provider store={store}>
