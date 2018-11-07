@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import { Route, BrowserRouter, Link } from 'react-router-dom'
 import Authentication from './Authenticate'
 import TopComponent from './topComponent.js'
+import HomePage from './HomePage.js'
 import Item from './items.js'
 
 import './App.css';
@@ -85,6 +86,9 @@ price: '7600',
 source: '/images/greekMask1.jpg', 
 itemId: '21'
 }]
+
+let searchReturnItems=[]
+
 class App extends Component {
   constructor(){
     super();
@@ -104,10 +108,29 @@ class App extends Component {
           source={item.source}
           itemId={item.itemId} />))
   }
-
+  renderSearchResults(){
+    return searchReturnItems.map(item=>
+      (<Item
+        category={item.category}
+        title={item.title}
+        description={item.description}
+        price={item.price}
+        source={item.source}
+        itemId={item.itemId} />))
+  
+           }
+  renderProfile(){
+    return (<div>Profile</div>)
+  }
+  renderCart(){
+    return (<div>Cart</div>)
+  }
+  renderListItem(){
+    return(<div>LIST ITEM HERE</div>)
+  }
     render() {
 
-      if(!this.state.username){
+      if(!this.props.username){
         return (<BrowserRouter>
                   <div className="App">
                      <Authentication/>
@@ -116,9 +139,14 @@ class App extends Component {
         );
     }else
     return (  <BrowserRouter>
-                <div>
-                    <TopComponent/>
-                    <Route exact={true} path='/' render={this.renderAllItems} />
+                <div style={{width:'100%'}}>
+                   
+                    <HomePage/>
+                    <Route exact path='/' render={this.renderAllItems} />
+                    <Route exact path='/profile' render={this.renderProfile} />
+                    <Route exact path='/cart' render={this.renderCart} />
+                    <Route exact path='/listItem' render={this.renderListItem}/>
+                    <Route exact path='/searchResults' render={this.renderSearchResults} />
                  </div>
              </BrowserRouter>)
 
@@ -127,6 +155,10 @@ class App extends Component {
 }
 
 
-
-let ConnectedApp = connect()(App)
+let mapStateToProps= function(state){
+ return {
+   username: state.username
+ }
+}
+let ConnectedApp = connect(mapStateToProps)(App)
 export default ConnectedApp;

@@ -32,7 +32,8 @@ class Authentication extends Component{
             if (!parsedResponse.success){
                 //change this to show up next to InputBox
                 alert("Username Already Taken")
-            }
+            }else 
+            this.props.dispatch({type:'loggedIn', username: this.state.usernameInput})
             // render to HomePage
         })
     }

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import TopComponent from './topComponent.js'
+import SearchResults from './searchResults.js'
 
 
 
@@ -11,26 +12,28 @@ class HomePage extends Component{
         this.getItems=this.getItems.bind(this)
     }
 
-    displayItems(item){
-        return <h1>item</h1>
-    }
+    
 
     getItems(){
         fetch('/getAllItems')
         .then(x=>x.text())
         .then(responseBody=>{
             let parsed=JSON.parse(responseBody);
-            
+        
+            this.props.dispatch({type:"getAllItems", items: parsed})
             let title=parsed.title;
             let price = parsed.price;
             // picture = parsed. picture ?
         })
     }
-
+    componentDidMount(){
+        this.getItems()
+    }
 
     render(){
-        return(<div><TopComponent/>
-                {this.getItems()}
+        return(<div style={{width:'100%'}}>
+            <TopComponent/>
+            <SearchResults/>
                 </div>
         )
     }
