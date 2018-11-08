@@ -15,6 +15,7 @@ class ListItemsPage extends Component{
         this.handleDescriptionChange=this.handleDescriptionChange.bind(this)
         this.handlePriceChange=this.handlePriceChange.bind(this)
         this.onChange=this.onChange.bind(this)
+        this.submit=this.submit.bind(this)
     }
     submit(event){
         event.preventDefault()
@@ -31,7 +32,7 @@ class ListItemsPage extends Component{
         }).then(function (x){ 
             return x.text()
         })
-        .then(response=> console.log(response))
+        .then(response=> alert('item added!'))
 
     }
     onChange(event){
