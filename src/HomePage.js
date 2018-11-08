@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import TopComponent from './topComponent.js'
-import SearchResults from './searchResults.js'
+
 import SideMenu from './sideMenu.js'
 
 
@@ -34,8 +34,6 @@ class HomePage extends Component{
     render(){
         return(<div className="homepage">
             <TopComponent/>
-           
-            <SearchResults align-content='flex-end'/>
                 </div>
         )
     }

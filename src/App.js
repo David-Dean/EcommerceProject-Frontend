@@ -168,20 +168,7 @@ class App extends Component {
                  </div>
              </BrowserRouter>)
 
-  {/* <div className="homepage">
-              <HomePage />
-              <div className="main-container">
-                <SideMenu />
-                <div className="items-container">
-                  <Route exact path="/" render={this.renderAllItems} />
-                  <Route
-                    exact
-                    path="/searchResults"
-                    render={this.renderSearchResults}
-                  />
-                </div>
-              </div>
-            </div> */}
+ 
   }
 }
 
