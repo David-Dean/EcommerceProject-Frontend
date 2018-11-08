@@ -9,16 +9,30 @@ class ListItemsPage extends Component{
             title: '',
             description: '',
             price: '',
-            source: '',
-            itemId: ''
+            source: ''
         }
         this.handleTitleChange=this.handleTitleChange.bind(this)
         this.handleDescriptionChange=this.handleDescriptionChange.bind(this)
         this.handlePriceChange=this.handlePriceChange.bind(this)
         this.onChange=this.onChange.bind(this)
     }
-    onClick(event){
+    submit(event){
         event.preventDefault()
+    
+        fetch('/addItem', {
+            method: "POST",
+            body: {
+                category: this.state.category,
+                title: this.state.title,
+                description: this.state.description,
+                price: this.state.price,
+                source: this.state.source
+            }
+        }).then(function (x){ 
+            return x.text()
+        })
+        .then(response=> console.log(response))
+
     }
     onChange(event){
         this.setState({category: event.target.value})
@@ -40,7 +54,7 @@ class ListItemsPage extends Component{
         return (<div>
                     {/* <h1 className='titleOfListPage'>LIST NEW ITEM</h1> */}
                     <div className='list-items'>
-                        <form>
+                        <form onSubmit={this.submit}>
                          <div className='dropdown'>
                                 What Category does your Item belong in?
                             <select onChange={this.onChange}>
@@ -75,7 +89,7 @@ class ListItemsPage extends Component{
                             {/*here find way to add pictures AND TO ADD THEM TO THE STATE*/}
                         </div>
                         <br/>
-                        <input className='submitItem' type='submit' onClick={this.submit} value="Ready to List Item!"></input>
+                        <input className='submitItem' type='submit' value="Ready to List Item!"></input>
                     </form>
         </div>
         </div>)

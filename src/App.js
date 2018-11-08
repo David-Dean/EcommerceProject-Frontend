@@ -7,6 +7,7 @@ import HomePage from './HomePage.js'
 import Item from './items.js'
 import SideMenu from './sideMenu.js'
 import ListItemsPage from './listItemsPage.js'
+import Category from './category.js'
 
 import './App.css';
 
@@ -137,25 +138,6 @@ class App extends Component {
     return(<div><ListItemsPage/></div>)
   }
 
-  
-
-
-
-
-
-  renderMasks(){
-    return null
-  }
-  renderStatues(){
-    return null
-  }
-  renderVases(){
-    return null
-  }
-  renderFossils(){
-    return null
-  }
-
     render() {
 
       if(!this.props.username){
@@ -182,11 +164,7 @@ class App extends Component {
                     <Route exact path='/profile' render={this.renderProfile} />
                     <Route exact path='/cart' render={this.renderCart} />
                     <Route exact path='/listItem' render={this.renderListItem}/>
-                    <Route exact path='/masks' render={this.renderMasks}/>
-                    <Route exact path='/statues' render={this.renderStatues}/>
-                    <Route exact path='/vases' render={this.renderVases}/>
-                    <Route exact path='/fossils' render={this.renderFossils}/>
-                   
+                    
                  </div>
              </BrowserRouter>)
 

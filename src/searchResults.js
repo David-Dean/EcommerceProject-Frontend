@@ -19,7 +19,7 @@ class SearchResults extends Component{
         }
 
         return(<div>
-            {/* {this.props.searchResults.map(displayResults)} */}
+           
         </div>)
 }
 }

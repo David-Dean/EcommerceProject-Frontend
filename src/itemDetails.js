@@ -9,6 +9,18 @@ class ItemDetails extends Component{
     }
 
     render(){
+        return (<div>
+
+                    <img></img>
+                    <div> TITLE </div>
+                    <div> DESCRIPTION</div>
+                    <div> PRICE </div>
+                    
+
+
+
+
+        </div>)
         
     }
 }

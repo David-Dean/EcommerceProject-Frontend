@@ -11,9 +11,9 @@ class SideMenu extends Component{
                     <ul className='sideList'>
                         <li> <Link to='/'>Homepage</Link></li>
                         <li> <Link to='/categories/masks'>Masks</Link></li>
-                        <li> <Link to='/statues'>Statues</Link></li>
-                        <li> <Link to='/vases'>Vases</Link></li>
-                        <li> <Link to='/fossils'>Fossils</Link></li>
+                        <li> <Link to='/categories/statues'>Statues</Link></li>
+                        <li> <Link to='/categories/vases'>Vases</Link></li>
+                        <li> <Link to='/categories/fossils'>Fossils</Link></li>
                         
                     </ul>
         </div>
