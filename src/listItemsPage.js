@@ -34,8 +34,10 @@ class ListItemsPage extends Component {
             return x.text()
         })
             .then(function (response) {
-
-                console.log(response)
+                let parsed = JSON.parse(response)
+                console.log(parsed)
+                if(parsed.success){alert("Item Added")
+                    }else alert('Failed')
             }
             )
     }
