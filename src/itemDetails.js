@@ -17,6 +17,8 @@ class ItemDetails extends Component{
                     <div> PRICE </div>
                     
 
+                    <button value='Add to Cart' onClick={this.addToCart}></button>
+
 
 
 

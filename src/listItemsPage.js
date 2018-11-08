@@ -27,14 +27,16 @@ class ListItemsPage extends Component{
                 title: this.state.title,
                 description: this.state.description,
                 price: this.state.price,
-                source: this.state.source
+                // source: this.state.source
             }
         }).then(function (x){ 
             return x.text()
         })
-        .then(response=> alert('item added!'))
-
-    }
+        .then(function(response) {
+            
+            console.log(response)
+            }
+        )}
     onChange(event){
         this.setState({category: event.target.value})
     }
