@@ -12,6 +12,13 @@ class Cart extends Component{
         this.calcTotal=this.calcTotal.bind(this)
     
     }
+
+ComponentDidMount(){
+    fetch('/getCart', {
+        method: "POST",
+        body: this.props.username
+    })
+}
 submit(event){
     event.preventDefault()
 }
@@ -53,6 +60,10 @@ calcTotal(){
 
 
 
-let ConnectedCart = connect()(Cart)
+let ConnectedCart = connect(function(store){
+    return{
+        username:store.username
+    }
+})(Cart)
 export default ConnectedCart
 

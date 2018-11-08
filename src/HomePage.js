@@ -4,8 +4,6 @@ import TopComponent from './topComponent.js'
 
 import SideMenu from './sideMenu.js'
 
-
-
 class HomePage extends Component{
     constructor(){
         super();
@@ -13,21 +11,15 @@ class HomePage extends Component{
         this.getItems=this.getItems.bind(this)
     }
 
-    
-
     getItems(){
         fetch('/getAllItems')
         .then(x=>x.text())
         .then(responseBody=>{
             let parsed=JSON.parse(responseBody);
-        
             this.props.dispatch({type:"getAllItems", items: parsed})
-            let title=parsed.title;
-            let price = parsed.price;
-            // picture = parsed. picture ?
         })
     }
-    componentDidMount(){
+    ComponentDidMount(){
         this.getItems()
     }
 
@@ -38,8 +30,6 @@ class HomePage extends Component{
         )
     }
 }
-
-
 
 let mapStateToProps = function(state){
     return{
