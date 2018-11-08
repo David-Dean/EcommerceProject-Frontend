@@ -8,6 +8,7 @@ class ItemDetails extends Component{
         this.state={
             itemId: '',
             
+            
         }
     }
 
@@ -39,8 +40,9 @@ class ItemDetails extends Component{
         })
     }
     render(){
+        if(this.state.itemInfo.title){
         return (<div>
-                    <img src={this.state.itemInfo.source} ></img>
+                    {/* <img src={this.state.itemInfo.source} ></img> */}
                     <div> {this.state.itemInfo.title} </div>
                     <div> {this.state.itemInfo.description}</div>
                     <div> PRICE </div>
@@ -48,7 +50,7 @@ class ItemDetails extends Component{
                     <button value='Add to Cart' onClick={this.addToCart} ></button>
         </div>)
         
-    }
+    }}
 }
 
 let MapStateToProps= function(store){

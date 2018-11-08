@@ -19,13 +19,12 @@ class HomePage extends Component{
             this.props.dispatch({type:"getAllItems", items: parsed})
         })
     }
-    ComponentDidMount(){
-        this.getItems()
-    }
+    
 
     render(){
         return(<div className="homepage">
             <TopComponent/>
+            {this.getItems()}
                 </div>
         )
     }
