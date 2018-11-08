@@ -10,7 +10,7 @@ class SideMenu extends Component{
         return (<div>
                     <ul className='sideList'>
                         <li> <Link to='/'>Homepage</Link></li>
-                        <li> <Link to='/masks'>Masks</Link></li>
+                        <li> <Link to='/categories/masks'>Masks</Link></li>
                         <li> <Link to='/statues'>Statues</Link></li>
                         <li> <Link to='/vases'>Vases</Link></li>
                         <li> <Link to='/fossils'>Fossils</Link></li>

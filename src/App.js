@@ -123,6 +123,10 @@ class App extends Component {
   
            }
           
+  renderCategory(router){
+    let category = router.match.params.category;
+    return (<Category categoryType={category} />)
+  }
   renderProfile(){
     return (<div>Profile</div>)
   }
@@ -133,10 +137,7 @@ class App extends Component {
     return(<div><ListItemsPage/></div>)
   }
 
-  renderCategory(router){
-    let catergory = router.match.params.catagory;
-    return (<Cat)
-  }
+  
 
 
 
@@ -174,7 +175,7 @@ class App extends Component {
                       <div className='items-container'>
                        <Route exact path='/' render={this.renderAllItems} />
                        <Route exact path='/searchResults' render={this.renderSearchResults} />
-                       <Route exact path='/categories/:catergory' render={this.renderCategory} />
+                       <Route exact path='/categories/:category' render={this.renderCategory} />
                        </div>
                       </div>
                     </div>
