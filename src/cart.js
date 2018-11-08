@@ -1,12 +1,15 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
-class Cart extends Comnponent{
+class Cart extends Component{
     constructor(){
         super();
         this.state={
             items:[]
         }
+        this.subTotal=this.subTotal.bind(this)
+        this.calcTaxes=this.calcTaxes.bind(this)
+        this.calcTotal=this.calcTotal.bind(this)
     
     }
 submit(event){
@@ -17,7 +20,11 @@ displayItems(items){
 
 }
 subTotal(){
-    let sum = item.price
+    let sum= 0;
+    for (var i=0; i<this.state.items.length; i++){
+        sum=sum+this.state.items[i].price
+    }
+     //HERE NEED TO ADD DIFFERENT ITEMS PRICES
     return sum
 }
 calcTaxes(){
@@ -26,8 +33,8 @@ calcTaxes(){
    return taxes
 }
 calcTotal(){
-    let sum = subTotal();
-    let taxes = calcTaxes();
+    let sum = this.subTotal();
+    let taxes = this.calcTaxes();
     let total = taxes + sum;
     return total
 }
