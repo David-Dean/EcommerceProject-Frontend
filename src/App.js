@@ -122,6 +122,7 @@ class App extends Component {
         itemId={item.itemId} />))
   
            }
+          
   renderProfile(){
     return (<div>Profile</div>)
   }
@@ -131,6 +132,16 @@ class App extends Component {
   renderListItem(){
     return(<div><ListItemsPage/></div>)
   }
+
+  renderCategory(router){
+    let catergory = router.match.params.catagory;
+    return (<Cat)
+  }
+
+
+
+
+
   renderMasks(){
     return null
   }
@@ -163,6 +174,7 @@ class App extends Component {
                       <div className='items-container'>
                        <Route exact path='/' render={this.renderAllItems} />
                        <Route exact path='/searchResults' render={this.renderSearchResults} />
+                       <Route exact path='/categories/:catergory' render={this.renderCategory} />
                        </div>
                       </div>
                     </div>

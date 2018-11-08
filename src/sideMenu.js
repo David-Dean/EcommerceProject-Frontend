@@ -19,6 +19,7 @@ class SideMenu extends Component{
         </div>
         )
     }
+    //catergories/.
 }
 
 
