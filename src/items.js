@@ -16,7 +16,7 @@ class Item extends Component{
         return (<div className='item'>
                     <div>{this.props.title}</div>
                      <div>{'$'+this.props.price}</div>
-                    <img height="100px" src={this.props.source} onClick={this.imageClick}><Link to='/itemDescription/:item'>Homepage</Link></img>
+                    <img height="100px" src={this.props.source} onClick={this.imageClick}><Link to='/itemDescription/:{this.props.items.itemId}'>Homepage</Link></img>
                     </div>)
                     
     }

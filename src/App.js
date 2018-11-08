@@ -128,6 +128,9 @@ class App extends Component {
     let category = router.match.params.category;
     return (<Category categoryType={category} />)
   }
+  renderDescription(router){
+    let itemId = router.match.params.item
+  }
   renderProfile(){
     return (<div>Profile</div>)
   }
@@ -158,6 +161,7 @@ class App extends Component {
                        <Route exact path='/' render={this.renderAllItems} />
                        <Route exact path='/searchResults' render={this.renderSearchResults} />
                        <Route exact path='/categories/:category' render={this.renderCategory} />
+                       <Route exact path='/itemDescription/:itemId' render={this.renderDescription} />
                        </div>
                       </div>
                     </div>
