@@ -28,7 +28,7 @@ class ListItemsPage extends Component {
                 title: this.state.title,
                 description: this.state.description,
                 price: this.state.price,
-                // source: this.state.source
+                source: this.state.source
             })
         }).then(function (x) {
             return x.text()

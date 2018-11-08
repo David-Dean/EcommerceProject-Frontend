@@ -21,7 +21,7 @@ let reducer= function(state, action){
 const store = createStore(
     reducer,
     {   
-        
+        items: [],
         searchResults: [] 
     },
 

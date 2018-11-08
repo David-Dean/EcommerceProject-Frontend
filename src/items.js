@@ -10,13 +10,13 @@ class Item extends Component{
     }
 
     imageClick(){
-        //HERE LINIKS TO IMAGE_DESCRIPTION PAGE
+       return null //HERE LINIKS TO IMAGE_DESCRIPTION PAGE
     }
     render(){
         return (<div className='item'>
                     <div>{this.props.title}</div>
                      <div>{'$'+this.props.price}</div>
-                    <img height="100px" src={this.props.source} onClick={this.imageClick}/>
+                    <img height="100px" src={this.props.source} onClick={this.imageClick}><Link to='/itemDescription/:item'>Homepage</Link></img>
                     </div>)
                     
     }

@@ -9,12 +9,37 @@ class Cart extends Comnponent{
         }
     
     }
+submit(event){
+    event.preventDefault()
+}
+displayItems(items){
+    return(<div></div>)
+
+}
+subTotal(){
+    let sum = item.price
+    return sum
+}
+calcTaxes(){
+   let sum=this.subTotal();
+   let taxes = 0.15*sum;
+   return taxes
+}
+calcTotal(){
+    let sum = subTotal();
+    let taxes = calcTaxes();
+    let total = taxes + sum;
+    return total
+}
+
     render(){
         return( <div>
-                  {this.state.items}
+                    <form onSubmit={this.submit}>
+                        {this.displayItems}
 
-
-        </div>)
+                        <input type='submit' value='Checkout Now'/>
+                    </form>
+                </div>)
 
     }
 }

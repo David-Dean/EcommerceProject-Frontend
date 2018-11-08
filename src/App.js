@@ -96,20 +96,20 @@ class App extends Component {
   constructor(){
     super();
     this.state={
-      items: items
+      items: [] //want this to be from db
     }
     this.renderAllItems=this.renderAllItems.bind(this)
     this.renderSearchResults=this.renderSearchResults.bind(this)
   }
 
   renderAllItems(){
-    return this.state.items.map(item=>
+    return this.props.items.map(item=>
       (<Item
           category={item.category}
           title={item.title}
           description={item.description}
           price={item.price}
-          source={item.source}
+          source={'/images/africanMask.jpg'}
           itemId={item.itemId} />))
   }
   renderSearchResults(){
@@ -175,6 +175,7 @@ class App extends Component {
 
 let mapStateToProps= function(state){
  return {
+   items: state.items,
    username: state.username,
    searchResults: state.searchResults
  }
