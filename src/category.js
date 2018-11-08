@@ -8,9 +8,9 @@ class Category extends Component{
         this.state={ 
             items : [],
          }
+         this.differentFunction=this.differentFunction.bind(this)
     }
-
-componentDidMount(){
+differentFunction(){
     fetch('/getItemsByCategory', {
         method: 'POST',
         body: JSON.stringify({category: this.props.categoryType})
@@ -19,11 +19,11 @@ componentDidMount(){
        let parsed=JSON.parse(response)
        this.setState({items: parsed})
     }.bind(this))
-    // or new endpoint takes prop as part of body (in fetch) filter on backend
 }
 
+
 render(){
-    
+    this.differentFunction()
     return (<div>
                 {this.state.items.map(function(item){
                     return (<Item
