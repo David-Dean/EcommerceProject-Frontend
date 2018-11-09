@@ -42,17 +42,17 @@ class ItemDetails extends Component{
         }.bind(this))
     }
     render(){
-        if(this.state.itemInfo){
+        if(this.state.title){
         return (<div>
                     {/* <img src={this.state.itemInfo.source} ></img> */}
-                    <div> {this.state.itemInfo.title} </div>
-                    <div> {this.state.itemInfo.description}</div>
+                    <div> {this.state.title} </div>
+                    <div> {this.state.description}</div>
                     <div> PRICE </div>
                  
                     <button value='Add to Cart' onClick={this.addToCart} ></button>
         </div>)
         
-    }return (<div>Loading..</div>)
+    }return (<div>Loading...</div>)
 }
 }
 
