@@ -16,7 +16,7 @@ class TopComponent extends Component{
                     </div>
                     <div className='top-container-right'>
                         <Link to={'/profile/'+this.props.username}> <button height="35px">MY PROFILE</button> </Link>
-                        <Link to='/cart'> <button height="35px" >MY CART</button> </Link>
+                        <Link to={'/cart/'+this.props.username}> <button height="35px" >MY CART</button> </Link>
                          <Link to='/listItem'><button height='35px'>LIST ITEM</button></Link>
                     </div>
                 </div>

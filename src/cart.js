@@ -2,10 +2,11 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
 class Cart extends Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state={
-            items:[]
+            items:[],
+           
         }
         this.subTotal=this.subTotal.bind(this)
         this.calcTaxes=this.calcTaxes.bind(this)
@@ -14,15 +15,18 @@ class Cart extends Component{
     }
 
 componentDidMount(){
+    console.log(this.props.username);
     fetch('/getCart', {
         method: "POST",
         headers: {
             'Content-Type': 'application/json'
           },
         body: JSON.stringify({username: this.props.username})
-    }).then(x=>x.text())
+    }).then(x=>{
+        return x.text()})
     .then(response=>{
         let parsed=JSON.parse(response)
+        console.log(parsed)
         this.setState({items: parsed})
     })
 }
@@ -78,10 +82,11 @@ calcTotal(){
 }
 
     render(){
+
         return( <div className='cart'>
 
                     <div  className='itemsDisplay'>
-                        {this.displayItemsInCart}
+                        {this.displayItemsInCart()}
                     </div>
 
                     <div className='cartForm'>
@@ -99,11 +104,6 @@ calcTotal(){
 
 
 
-let ConnectedCart = connect(function(store){
-    return{
-        username:store.username,
-        cart: store.cart
-    }
-})(Cart)
+let ConnectedCart = connect()(Cart)
 export default ConnectedCart
 

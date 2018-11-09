@@ -23,7 +23,7 @@ class ItemDetails extends Component{
         }).then(x=>x.text())
         .then(response=>{
             let parsed = JSON.parse(response);
-         
+            console.log(parsed)
             if (parsed.success){alert('Item Added')}
         })     
     }

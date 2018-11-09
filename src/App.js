@@ -65,8 +65,9 @@ class App extends Component {
     return (<div><Profile user={username}></Profile></div>)
   }
 
-  renderCart(){
-    return (<Cart></Cart>)
+  renderCart(router){
+    let username = router.match.params.username
+    return (<Cart username={username}></Cart>)
   }
   renderListItem(){
     return(<div><ListItemsPage/></div>)
@@ -94,11 +95,12 @@ class App extends Component {
                        <Route exact path='/itemDescription/:itemId' render={this.renderDescription} />
                        </div>
                       </div>
+                      <Route exact path='/sellerProfile/:seller' render={this.renderSellerProfile} />
+                      <Route exact path='/profile/:username' render={this.renderProfile} />
+                      <Route exact path='/cart/:username' render={this.renderCart} />
+                      <Route exact path='/listItem' render={this.renderListItem}/>
                     </div>
-                    <Route exact path='/sellerProfile/:seller' render={this.renderSellerProfile} />
-                    <Route exact path='/profile/:username' render={this.renderProfile} />
-                    <Route exact path='/cart' render={this.renderCart} />
-                    <Route exact path='/listItem' render={this.renderListItem}/>
+                    
                  </div>
              </BrowserRouter>)
   }
