@@ -12,6 +12,9 @@ class SellerProfile extends Component{
     componentDidMount(){
         fetch('/getUsersListings', {
             method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+              },
             body: JSON.stringify({username: this.props.seller})
         }).then((x)=>x.text())
         .then((response)=>{
@@ -41,5 +44,5 @@ class SellerProfile extends Component{
 
     }
 }
-let ConnectedProfile = connect()(SellerProfile)
-export default ConnectedProfile
+let ConnectedSellerProfile = connect()(SellerProfile)
+export default ConnectedSellerProfile

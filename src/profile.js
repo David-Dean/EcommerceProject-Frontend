@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 
 
 
-class SellerProfile extends Component{
+class Profile extends Component{
     constructor(props){
         super(props);
         this.state={
@@ -21,12 +21,16 @@ class SellerProfile extends Component{
         callback=callback.bind(this)
         fetch('/getUsersListings', {
             method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+              },
             body: JSON.stringify({username: this.props.user})
         }).then((x)=>x.text())
         .then(callback)
     }
    
     displayListings(){
+        
         return(<div>{this.state.listings.map((item)=> {
             return(<div>
                 <div>{item.source}</div>
@@ -37,6 +41,7 @@ class SellerProfile extends Component{
 
     }
     render(){
+        if (!this.state.listings[0]){return (<div>Loading..</div>)}
         return( <div>
             <div>User Information</div>
             <div>{this.props.user}</div>
@@ -45,5 +50,5 @@ class SellerProfile extends Component{
         )
     }
 }
-let ConnectedSellerProfile = connect()(SellerProfile)
-export default ConnectedSellerProfile
+let ConnectedProfile = connect()(Profile)
+export default ConnectedProfile

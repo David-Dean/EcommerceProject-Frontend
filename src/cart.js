@@ -33,6 +33,9 @@ submit(event){
 remove(itemId){
     fetch('/removeFromCart', {
         method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+          },
         body: JSON.stringify({itemId:itemId})
     }).then(x=>x.text())
     .then(response=>{
