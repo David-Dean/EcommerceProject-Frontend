@@ -11,7 +11,7 @@ class Cart extends Component{
         this.subTotal=this.subTotal.bind(this)
         this.calcTaxes=this.calcTaxes.bind(this)
         this.calcTotal=this.calcTotal.bind(this)
-    
+        this.displayItemsInCart=this.displayItemsInCart.bind(this)
     }
 
 componentDidMount(){
@@ -25,6 +25,7 @@ componentDidMount(){
     }).then(x=>{
         return x.text()})
     .then(response=>{
+    
         let parsed=JSON.parse(response)
         console.log(parsed)
         this.setState({items: parsed})
@@ -50,11 +51,10 @@ remove(itemId){
 
 }
 displayItemsInCart(){
-    if (!this.state.items){return <div>Loading..</div>}
-    else
+    
     return (<div>{this.state.items.map((item) => {
         return (<div>
-        <div>{item.source}</div>
+        <div>{}</div>
         <div>{item.title}</div>
         <div>{item.price}</div>
         <button onClick={() => this.remove(item.itemId)}>Remove</button>
@@ -81,11 +81,13 @@ calcTotal(){
     return total
 }
 
-    render(){
-
+ render(){
+        if (!this.state.items){return <div>Loading..</div>}
+        else
         return( <div className='cart'>
 
                     <div  className='itemsDisplay'>
+                        Items in Cart:
                         {this.displayItemsInCart()}
                     </div>
 
