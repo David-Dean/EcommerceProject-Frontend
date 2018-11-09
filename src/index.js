@@ -20,7 +20,7 @@ let reducer= function(state, action){
         
         return {...state, cart:action.content}
     }
-    if (action.type === 'removeFromCart'){
+    if (action.type === 'removeFromCart'){ //HERE MUST CHANGE
             store.cart.filter()
         return {...state, cart:action.content}
     }

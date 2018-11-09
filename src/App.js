@@ -16,8 +16,8 @@ import './App.css';
 
 
 class App extends Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state={
       items: [] //want this to be from db
     }
@@ -55,8 +55,9 @@ class App extends Component {
     let itemId = router.match.params.itemId
     return (<ItemDetails itemId={itemId}></ItemDetails>)
   }
-  renderProfile(){
-    return (<div><Profile username={this.props.username}></Profile></div>)
+  renderProfile(router){
+    let seller = router.match.params.seller
+    return (<div><Profile seller={seller}></Profile></div>)
   }
   renderCart(){
     return (<Cart></Cart>)
@@ -64,8 +65,7 @@ class App extends Component {
   renderListItem(){
     return(<div><ListItemsPage/></div>)
   }
-
-    render() {
+  render() {
 
       if(!this.props.username){
         return (<BrowserRouter>
@@ -89,17 +89,13 @@ class App extends Component {
                        </div>
                       </div>
                     </div>
-                    <Route exact path='/profile' render={this.renderProfile} />
+                    <Route exact path='/profile/:seller' render={this.renderProfile} />
                     <Route exact path='/cart' render={this.renderCart} />
                     <Route exact path='/listItem' render={this.renderListItem}/>
-                    
                  </div>
              </BrowserRouter>)
-
- 
   }
 }
-
 
 let mapStateToProps= function(state){
  return {

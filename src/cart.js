@@ -22,11 +22,13 @@ componentDidMount(){
         body: this.props.username
     }).then(x=>x.text())
     .then(response=>{
-        return 
+        let parsed=JSON.parse(response)
+        this.setState({items: parsed})
     })
 }
 submit(event){
     event.preventDefault()
+    //HERE GO TO PAYEMENT SYSTEM
 }
 remove(){
     this.dispatch({type:'removeFromCart', content: this.state.usernameInput})
@@ -48,7 +50,6 @@ subTotal(){
     for (var i=0; i<this.state.items.length; i++){
         sum=sum+this.state.items[i].price
     }
-     //HERE NEED TO ADD DIFFERENT ITEMS PRICES
     return sum
 }
 calcTaxes(){
@@ -71,11 +72,9 @@ calcTotal(){
                     </form>
 
                     <form onSubmit={this.submit}>
-                        
                         <div>Subtotal: {this.subTotal()} </div>
                         <div>Taxes: {this.calcTaxes()} </div>
                         <div>Total: {this.calcTotal()} </div>
-
                         <input type='submit' value='Checkout Now'/>
                     </form>
                 </div>)

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {  Link } from 'react-router-dom'
 
 
 class ItemDetails extends Component{
@@ -54,10 +55,14 @@ class ItemDetails extends Component{
                     {/* <img src={this.state.source} ></img> */}
                     
                     <div> {this.state.title} </div>
-                    <div> {this.state.description}</div>
-                    <div> {this.state.price} </div>
-                 
+                    <br/>
+                    <div> Item Information: {this.state.description}</div>
+                    <br/>
+                    <div> Price: {this.state.price} $ </div>
+                    <br/>
+                    <div>Sold by: <Link to={`/profile/${this.props.username}`}>{this.props.username}</Link></div>
                     <button  onClick={this.addToCart} >ADD TO CART</button>
+
         </div>)
         
     }return (<div>Loading...</div>)
