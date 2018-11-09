@@ -23,9 +23,9 @@ class ItemDetails extends Component{
     }
 
     componentDidMount(){
-        // if (!this.props.itemId){
-        //     return(<div>Loading..</div>)
-        // }else
+        if (!this.props.itemId){
+            return(<div>Loading..</div>)
+        }else
         fetch('/getItem', {
             method:"POST",
             body: JSON.stringify({itemId: this.props.itemId})
@@ -58,7 +58,7 @@ class ItemDetails extends Component{
 
 let MapStateToProps= function(store){
     return{
-        itemId: store.itemId,
+        // itemId: store.itemId,
         username: store.username
        
     }
