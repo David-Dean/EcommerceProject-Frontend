@@ -16,7 +16,7 @@ class SellerProfile extends Component{
     componentDidMount(){
         fetch('/getUsersListings', {
             method: "POST",
-            body: JSON.stringify({username: this.props.user})
+            body: JSON.stringify({username: this.props.seller})
         }).then((x)=>x.text())
         .then((response)=>{
         let parsed=JSON.parse(response)
@@ -36,15 +36,17 @@ class SellerProfile extends Component{
     }
     render(){
         return( <div>
-            <div>User Information</div>
-            <div>{this.props.username}</div>
-            <div>  {this.displayListings} </div>
-
-
-            </div>
+                    <div>Seller Information</div>
+                    <div>{this.state.listings[0].username}</div>
+                    <div>  {this.displayListings()} </div>
+                </div>
         )
 
     }
 }
-let ConnectedSellerProfile = connect()(SellerProfile)
-export default ConnectedSellerProfile
+let ConnectedProfile = connect(function(store){
+    return{
+        username:store.username
+    }
+})(SellerProfile)
+export default ConnectedProfile

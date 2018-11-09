@@ -7,11 +7,9 @@ import SideMenu from './sideMenu.js'
 class HomePage extends Component{
     constructor(){
         super();
-        this.state={}
-        
+        this.state={} 
     }
 componentDidMount(){
-   
         fetch('/getAllItems',{ 
             headers: {
                 'Content-Type': 'application/json'
@@ -23,12 +21,10 @@ componentDidMount(){
             this.props.dispatch({type:"getAllItems", items: parsed})
         })
     }
-    
 
     render(){
         return(<div className="homepage">
             <TopComponent/>
-            
                 </div>
         )
     }
@@ -39,7 +35,6 @@ let mapStateToProps = function(state){
         title: state.title
     }
 }  //// look this up  in redux workshop
-
 
 let ConnectedHomePage = connect(mapStateToProps)(HomePage)
 export default ConnectedHomePage

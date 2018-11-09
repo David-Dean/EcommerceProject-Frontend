@@ -78,7 +78,7 @@ calcTotal(){
         return( <div className='cart'>
 
                     <div  className='itemsDisplay'>
-                        {this.displayItemsinCart}
+                        {this.displayItemsInCart}
                     </div>
 
                     <div className='cartForm'>

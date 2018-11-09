@@ -10,6 +10,7 @@ import ListItemsPage from './listItemsPage.js'
 import Category from './category.js'
 import ItemDetails from './itemDetails.js'
 import Cart from './cart.js'
+import SellerProfile from './sellerProfile'
 import Profile from './profile.js'
 
 import './App.css';
@@ -55,10 +56,15 @@ class App extends Component {
     let itemId = router.match.params.itemId
     return (<ItemDetails itemId={itemId}></ItemDetails>)
   }
-  renderProfile(router){
+  renderSellerProfile(router){
     let seller = router.match.params.seller
-    return (<div><Profile seller={seller}></Profile></div>)
+    return (<div><SellerProfile seller={seller}></SellerProfile></div>)
   }
+  renderProfile(router){
+    let username = router.match.params.username
+    return (<div><Profile user={username}></Profile></div>)
+  }
+
   renderCart(){
     return (<Cart></Cart>)
   }
@@ -89,7 +95,8 @@ class App extends Component {
                        </div>
                       </div>
                     </div>
-                    <Route exact path='/profile/:seller' render={this.renderProfile} />
+                    <Route exact path='/sellerProfile/:seller' render={this.renderSellerProfile} />
+                    <Route exact path='/profile/:username' render={this.renderProfile} />
                     <Route exact path='/cart' render={this.renderCart} />
                     <Route exact path='/listItem' render={this.renderListItem}/>
                  </div>

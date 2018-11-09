@@ -62,7 +62,7 @@ class ItemDetails extends Component{
                     <br/>
                     <div> Price: {this.state.price} $ </div>
                     <br/>
-                    <div>Sold by: <Link to={`/profile/${this.state.soldBy}`}>{this.state.soldBy}</Link></div>
+                    <div>Sold by: <Link to={`/sellerProfile/${this.state.soldBy}`}>{this.state.soldBy}</Link></div>
                     <button  onClick={this.addToCart} >ADD TO CART</button>
         </div>)      
     }return (<div>Loading...</div>)
