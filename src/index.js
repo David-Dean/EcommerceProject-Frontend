@@ -16,6 +16,14 @@ let reducer= function(state, action){
         
         return {...state, searchResults:action.res}
     }
+    if (action.type === 'addToCart'){
+        
+        return {...state, cart:action.content}
+    }
+    if (action.type === 'removeFromCart'){
+            store.cart.filter()
+        return {...state, cart:action.content}
+    }
     return {...state}
 }
 const store = createStore(

@@ -13,9 +13,12 @@ class Cart extends Component{
     
     }
 
-ComponentDidMount(){
+componentDidMount(){
     fetch('/getCart', {
         method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+          },
         body: this.props.username
     }).then(x=>x.text())
     .then(response=>{
@@ -25,13 +28,21 @@ ComponentDidMount(){
 submit(event){
     event.preventDefault()
 }
-displayItems(items){
-    for (var i=0; i<this.props.cart.length; i++){
-        return(<div></div>)
-    }
-    
+remove(){
+    this.dispatch({type:'removeFromCart', content: this.state.usernameInput})
 
 }
+displayItemsInCart(){
+    return (<div>{this.props.cart.map((item) => {
+        return (<div>
+        <div>{item.source}</div>
+        <div>{item.title}</div>
+        <div>{item.price}</div>
+        <button onClick={this.remove}>Remove</button>
+           </div> )
+    })}</div>)
+}
+
 subTotal(){
     let sum= 0;
     for (var i=0; i<this.state.items.length; i++){
@@ -56,10 +67,14 @@ calcTotal(){
         return( <div>
 
                     <form>
-                    {this.displayItems}
+                    {this.displayItemsinCart}
                     </form>
+
                     <form onSubmit={this.submit}>
                         
+                        <div>Subtotal: {this.subTotal()} </div>
+                        <div>Taxes: {this.calcTaxes()} </div>
+                        <div>Total: {this.calcTotal()} </div>
 
                         <input type='submit' value='Checkout Now'/>
                     </form>
@@ -72,7 +87,8 @@ calcTotal(){
 
 let ConnectedCart = connect(function(store){
     return{
-        username:store.username
+        username:store.username,
+        cart: store.cart
     }
 })(Cart)
 export default ConnectedCart

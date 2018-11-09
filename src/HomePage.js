@@ -12,7 +12,11 @@ class HomePage extends Component{
     }
 
     getItems(){
-        fetch('/getAllItems')
+        fetch('/getAllItems',{ 
+            headers: {
+                'Content-Type': 'application/json'
+              }
+        })
         .then(x=>x.text())
         .then(responseBody=>{
             let parsed=JSON.parse(responseBody);

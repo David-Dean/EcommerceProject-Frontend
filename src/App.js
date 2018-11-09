@@ -10,6 +10,7 @@ import ListItemsPage from './listItemsPage.js'
 import Category from './category.js'
 import ItemDetails from './itemDetails.js'
 import Cart from './cart.js'
+import Profile from './profile.js'
 
 import './App.css';
 
@@ -55,7 +56,7 @@ class App extends Component {
     return (<ItemDetails itemId={itemId}></ItemDetails>)
   }
   renderProfile(){
-    return (<div>Profile</div>)
+    return (<div><Profile username={this.props.username}></Profile></div>)
   }
   renderCart(){
     return (<Cart></Cart>)

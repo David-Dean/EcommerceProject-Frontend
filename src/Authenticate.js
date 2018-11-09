@@ -25,6 +25,9 @@ class Authentication extends Component{
         
         fetch('/signup', {
             method:"POST",
+            headers: {
+                'Content-Type': 'application/json'
+              },
             body:body
         }).then(x=> x.text())
         .then(resBody=> {
@@ -46,6 +49,9 @@ class Authentication extends Component{
         
         fetch('/login', {
             method:"POST",
+            headers: {
+                'Content-Type': 'application/json'
+              },
             body:body
         }).then(x=> x.text())
         .then(resBody=> {

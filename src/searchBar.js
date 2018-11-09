@@ -19,6 +19,9 @@ class SearchBar extends Component{
         let body = {query:search}
         fetch('/search', {
             method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+              },
             body: JSON.stringify(body)
         }).then(x=>x.text()
         ).then(response=>{

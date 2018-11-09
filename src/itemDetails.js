@@ -15,10 +15,14 @@ class ItemDetails extends Component{
     addToCart(){
         fetch('/addToCart', {
             method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+              },
             body: JSON.stringify({itemId: this.props.itemId, username: this.props.username})
         }).then(x=>x.text())
         .then(response=>{
-            return 
+            let parsed = JSON.parse(response);
+            this.dispatch({type: 'addToCart', content: parsed })
         })     
     }
 
@@ -28,6 +32,9 @@ class ItemDetails extends Component{
         }else
         fetch('/getItem', {
             method:"POST",
+            headers: {
+                'Content-Type': 'application/json'
+              },
             body: JSON.stringify({itemId: this.props.itemId})
         }).then(x=>x.text())
         .then(function(response){
@@ -44,12 +51,13 @@ class ItemDetails extends Component{
     render(){
         if(this.state.title){
         return (<div>
-                    {/* <img src={this.state.itemInfo.source} ></img> */}
+                    {/* <img src={this.state.source} ></img> */}
+                    
                     <div> {this.state.title} </div>
                     <div> {this.state.description}</div>
-                    <div> PRICE </div>
+                    <div> {this.state.price} </div>
                  
-                    <button value='Add to Cart' onClick={this.addToCart} ></button>
+                    <button  onClick={this.addToCart} >ADD TO CART</button>
         </div>)
         
     }return (<div>Loading...</div>)
