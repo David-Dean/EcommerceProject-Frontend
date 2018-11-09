@@ -8,7 +8,7 @@ class HomePage extends Component{
     constructor(){
         super();
         this.state={}
-        this.getItems=this.getItems.bind(this)
+        
     }
 componentDidMount(){
    

@@ -38,7 +38,7 @@ class Profile extends Component{
         return( <div>
             <div>Seller Information</div>
             <div>{this.props.username}</div>
-            <div>  {this.displayListings()} </div>
+            <div>  {this.displayListings} </div>
 
 
             </div>

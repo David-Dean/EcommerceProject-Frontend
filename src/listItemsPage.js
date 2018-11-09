@@ -19,7 +19,26 @@ class ListItemsPage extends Component {
     }
     submit(event) {
         event.preventDefault()
-
+        let callback = function (response) {
+            let parsed = JSON.parse(response)
+            console.log(parsed)
+            if(parsed.success){
+                alert("Item Added")
+                fetch('/getAllItems',{ 
+                    headers: {
+                        'Content-Type': 'application/json'
+                      }
+                })
+                .then(x=>x.text())
+                .then(responseBody=>{
+                    let parsed=JSON.parse(responseBody);
+                    this.props.dispatch({type:"getAllItems", items: parsed})
+                    
+                })
+        }
+     }
+     callback=callback.bind(this)
+      
         fetch('/addItem', {
             method: "POST",
             headers: {
@@ -35,25 +54,7 @@ class ListItemsPage extends Component {
             })
         }).then(function (x) {
             return x.text()
-        })
-            .then(function (response) {
-                let parsed = JSON.parse(response)
-                console.log(parsed)
-                if(parsed.success){alert("Item Added")
-                    }else alert('Failed')
-                    
-                    fetch('/getAllItems',{ 
-                        headers: {
-                            'Content-Type': 'application/json'
-                          }
-                    })
-                    .then(x=>x.text())
-                    .then(responseBody=>{
-                        let parsed=JSON.parse(responseBody);
-                        this.props.dispatch({type:"getAllItems", items: parsed})
-                    })
-            }
-            )
+        }).then(callback)
     }
     onChange(event) {
         this.setState({ category: event.target.value })

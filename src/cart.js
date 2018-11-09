@@ -5,7 +5,7 @@ class Cart extends Component{
     constructor(){
         super();
         this.state={
-            items:undefined
+            items:[]
         }
         this.subTotal=this.subTotal.bind(this)
         this.calcTaxes=this.calcTaxes.bind(this)
@@ -19,7 +19,7 @@ componentDidMount(){
         headers: {
             'Content-Type': 'application/json'
           },
-        body: this.props.username
+        body: JSON.stringify({username: this.props.username})
     }).then(x=>x.text())
     .then(response=>{
         let parsed=JSON.parse(response)
@@ -75,17 +75,20 @@ calcTotal(){
 }
 
     render(){
-        return( <div>
-                    <form>
-                    {this.displayItemsinCart}
-                    </form>
+        return( <div className='cart'>
 
-                    <form onSubmit={this.submit}>
-                        <div>Subtotal: {this.subTotal()} </div>
-                        <div>Taxes: {this.calcTaxes()} </div>
-                        <div>Total: {this.calcTotal()} </div>
-                        <input type='submit' value='Checkout Now'/>
-                    </form>
+                    <div  className='itemsDisplay'>
+                        {this.displayItemsinCart}
+                    </div>
+
+                    <div className='cartForm'>
+                        <form onSubmit={this.submit}>
+                            <div>Subtotal: {this.subTotal()} </div>
+                            <div>Taxes: {this.calcTaxes()} </div>
+                            <div>Total: {this.calcTotal()} </div>
+                            <input type='submit' value='Checkout Now'/>
+                        </form>
+                    </div>
                 </div>)
 
     }
