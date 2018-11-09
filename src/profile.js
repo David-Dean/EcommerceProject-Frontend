@@ -14,15 +14,17 @@ class SellerProfile extends Component{
 
 
     componentDidMount(){
+        let callback =function(response){
+            let parsed=JSON.parse(response)
+            this.setState({listings: parsed})
+        }
+        callback=callback.bind(this)
         fetch('/getUsersListings', {
             method: "POST",
             body: JSON.stringify({username: this.props.user})
         }).then((x)=>x.text())
-        .then((response)=>{
-        let parsed=JSON.parse(response)
-        this.setState({listings: parsed})
-
-    })}
+        .then(callback)
+    }
    
     displayListings(){
         return(<div>{this.state.listings.map((item)=> {
@@ -37,13 +39,10 @@ class SellerProfile extends Component{
     render(){
         return( <div>
             <div>User Information</div>
-            <div>{this.props.username}</div>
-            <div>  {this.displayListings} </div>
-
-
+            <div>{this.props.user}</div>
+            <div>  {this.displayListings()} </div>
             </div>
         )
-
     }
 }
 let ConnectedSellerProfile = connect()(SellerProfile)

@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
-
-
-
 class SellerProfile extends Component{
     constructor(props){
         super(props);
@@ -11,7 +8,6 @@ class SellerProfile extends Component{
             listings:[]
         }
     }
-
 
     componentDidMount(){
         fetch('/getUsersListings', {
@@ -35,6 +31,7 @@ class SellerProfile extends Component{
 
     }
     render(){
+        if (!this.state.listings[0]){return (<div>Loading..</div>)}
         return( <div>
                     <div>Seller Information</div>
                     <div>{this.state.listings[0].username}</div>
@@ -44,9 +41,5 @@ class SellerProfile extends Component{
 
     }
 }
-let ConnectedProfile = connect(function(store){
-    return{
-        username:store.username
-    }
-})(SellerProfile)
+let ConnectedProfile = connect()(SellerProfile)
 export default ConnectedProfile
