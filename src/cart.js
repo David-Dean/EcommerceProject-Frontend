@@ -17,13 +17,19 @@ ComponentDidMount(){
     fetch('/getCart', {
         method: "POST",
         body: this.props.username
+    }).then(x=>x.text())
+    .then(response=>{
+        return 
     })
 }
 submit(event){
     event.preventDefault()
 }
 displayItems(items){
-    return(<div></div>)
+    for (var i=0; i<this.props.cart.length; i++){
+        return(<div></div>)
+    }
+    
 
 }
 subTotal(){
@@ -48,8 +54,12 @@ calcTotal(){
 
     render(){
         return( <div>
+
+                    <form>
+                    {this.displayItems}
+                    </form>
                     <form onSubmit={this.submit}>
-                        {this.displayItems}
+                        
 
                         <input type='submit' value='Checkout Now'/>
                     </form>

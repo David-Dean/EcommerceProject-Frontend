@@ -8,7 +8,7 @@ import Item from './items.js'
 import SideMenu from './sideMenu.js'
 import ListItemsPage from './listItemsPage.js'
 import Category from './category.js'
-import ItemDescription from './itemDetails.js'
+import ItemDetails from './itemDetails.js'
 import Cart from './cart.js'
 
 import './App.css';
@@ -32,7 +32,7 @@ class App extends Component {
           description={item.description}
           price={item.price}
           source={'/images/africanMask.jpg'}
-          itemId={item.itemId} />))
+          itemId={item.itemID} />))
   }
   renderSearchResults(){
     return this.props.searchResults.map(item=>
@@ -42,7 +42,7 @@ class App extends Component {
         description={item.description}
         price={item.price}
         source={'/images/africanMask.jpg'}
-        itemId={item.itemId} />))
+        itemId={item.itemID} />))
   
            }
           
@@ -52,7 +52,7 @@ class App extends Component {
   }
   renderDescription(router){
     let itemId = router.match.params.itemId
-    return (<ItemDescription itemId={itemId}></ItemDescription>)
+    return (<ItemDetails itemId={itemId}></ItemDetails>)
   }
   renderProfile(){
     return (<div>Profile</div>)
