@@ -32,12 +32,11 @@ class ItemDetails extends Component{
         }).then(x=>x.text())
         .then(function(response){
             let parsed = JSON.parse(response);
-            debugger
-           this.setState({itemInfo: {title: parsed.title,
+           this.setState({title: parsed.title,
             description : parsed.description,
             price : parsed.price,
             category: parsed.category,
-            itemId:parsed.itemID}})
+            itemId:parsed.itemID})
                 
             
         }.bind(this))
