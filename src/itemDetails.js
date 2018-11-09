@@ -24,6 +24,7 @@ class ItemDetails extends Component{
         .then(response=>{
             let parsed = JSON.parse(response);
             this.dispatch({type: 'addToCart', content: parsed })
+            if (parsed.success){alert('Item Added')}
         })     
     }
 
@@ -44,30 +45,28 @@ class ItemDetails extends Component{
             description : parsed.description,
             price : parsed.price,
             category: parsed.category,
-            itemId:parsed.itemID})
-                
-            
+            itemId:parsed.itemID,
+            soldBy: parsed.username, 
+            // source: parsed.source
+        })
         }.bind(this))
     }
     render(){
         if(this.state.title){
         return (<div>
-                    {/* <img src={this.state.source} ></img> */}
-                    
+                    {/* <img src={this.state.source} onClick=ZOOM ></img> */}
+                    <br/>
                     <div> {this.state.title} </div>
                     <br/>
                     <div> Item Information: {this.state.description}</div>
                     <br/>
                     <div> Price: {this.state.price} $ </div>
                     <br/>
-                    <div>Sold by: <Link to={`/profile/${this.props.username}`}>{this.props.username}</Link></div>
+                    <div>Sold by: <Link to={`/profile/${this.state.soldBy}`}>{this.state.soldBy}</Link></div>
                     <button  onClick={this.addToCart} >ADD TO CART</button>
-
-        </div>)
-        
+        </div>)      
     }return (<div>Loading...</div>)
-}
-}
+}}
 
 let MapStateToProps= function(store){
     return{

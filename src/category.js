@@ -14,8 +14,8 @@ differentFunction(){
     fetch('/getItemsByCategory', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
-          },
+                'Content-Type': 'application/json'
+              },
         body: JSON.stringify({category: this.props.categoryType})
     }).then(x=>x.text()
     ).then(function(response){
@@ -35,7 +35,7 @@ render(){
                         description={item.description}
                         price={item.price}
                         source={'/images/africanMask.jpg'}
-                        itemId={item.itemId} />)
+                        itemId={item.itemID} />)
                 })}
     </div>)
     }

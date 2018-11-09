@@ -49,7 +49,7 @@ class App extends Component {
           
   renderCategory(router){
     let category = router.match.params.category;
-    return (<Category categoryType={category} />)
+    return (<Category  categoryType={category} />)
   }
   renderDescription(router){
     let itemId = router.match.params.itemId

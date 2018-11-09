@@ -10,8 +10,8 @@ class HomePage extends Component{
         this.state={}
         this.getItems=this.getItems.bind(this)
     }
-
-    getItems(){
+componentDidMount(){
+   
         fetch('/getAllItems',{ 
             headers: {
                 'Content-Type': 'application/json'
@@ -28,7 +28,7 @@ class HomePage extends Component{
     render(){
         return(<div className="homepage">
             <TopComponent/>
-            {this.getItems()}
+            
                 </div>
         )
     }

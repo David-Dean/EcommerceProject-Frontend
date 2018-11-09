@@ -16,7 +16,7 @@ class Profile extends Component{
     componentDidMount(){
         fetch('/getUsersListings', {
             method: "POST",
-            body: JSON.stringify({username: this.props.username})
+            body: JSON.stringify({username: this.props.seller})
         }).then((x)=>x.text())
         .then((response)=>{
         let parsed=JSON.parse(response)

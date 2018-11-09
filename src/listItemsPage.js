@@ -41,6 +41,17 @@ class ListItemsPage extends Component {
                 console.log(parsed)
                 if(parsed.success){alert("Item Added")
                     }else alert('Failed')
+                    
+                    fetch('/getAllItems',{ 
+                        headers: {
+                            'Content-Type': 'application/json'
+                          }
+                    })
+                    .then(x=>x.text())
+                    .then(responseBody=>{
+                        let parsed=JSON.parse(responseBody);
+                        this.props.dispatch({type:"getAllItems", items: parsed})
+                    })
             }
             )
     }

@@ -15,7 +15,7 @@ class TopComponent extends Component{
                          <SearchBar/>
                     </div>
                     <div className='top-container-right'>
-                        <Link to='/profile'> <button height="35px">MY PROFILE</button> </Link>
+                        <Link to={'/profile/'+this.props.username}> <button height="35px">MY PROFILE</button> </Link>
                         <Link to='/cart'> <button height="35px" >MY CART</button> </Link>
                          <Link to='/listItem'><button height='35px'>LIST ITEM</button></Link>
                     </div>
@@ -25,5 +25,9 @@ class TopComponent extends Component{
     }
 }
 
-let ConnectedTopComponent = connect()(TopComponent)
+let ConnectedTopComponent = connect((store) => {
+    return {
+        username : store.username
+   }
+})(TopComponent)
 export default ConnectedTopComponent

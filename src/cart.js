@@ -5,7 +5,7 @@ class Cart extends Component{
     constructor(){
         super();
         this.state={
-            items:[]
+            items:undefined
         }
         this.subTotal=this.subTotal.bind(this)
         this.calcTaxes=this.calcTaxes.bind(this)
@@ -30,17 +30,27 @@ submit(event){
     event.preventDefault()
     //HERE GO TO PAYEMENT SYSTEM
 }
-remove(){
-    this.dispatch({type:'removeFromCart', content: this.state.usernameInput})
+remove(itemId){
+    fetch('/removeFromCart', {
+        method: "POST",
+        body: JSON.stringify({itemId:itemId})
+    }).then(x=>x.text())
+    .then(response=>{
+        let parsed=JSON.parse(response)
+        alert("Item Removed from Cart")
+    })
+    //HERE FIX CONTENT OF DISPATCH
 
 }
 displayItemsInCart(){
-    return (<div>{this.props.cart.map((item) => {
+    if (!this.state.items){return <div>Loading..</div>}
+    else
+    return (<div>{this.state.items.map((item) => {
         return (<div>
         <div>{item.source}</div>
         <div>{item.title}</div>
         <div>{item.price}</div>
-        <button onClick={this.remove}>Remove</button>
+        <button onClick={() => this.remove(item.itemId)}>Remove</button>
            </div> )
     })}</div>)
 }
@@ -66,7 +76,6 @@ calcTotal(){
 
     render(){
         return( <div>
-
                     <form>
                     {this.displayItemsinCart}
                     </form>
