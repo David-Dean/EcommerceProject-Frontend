@@ -49,21 +49,21 @@ remove(itemId){
     .then(response=>{
         let parsed=JSON.parse(response)
         alert("Item Removed from Cart")
+        fetch('/getCart', {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+              },
+            body: JSON.stringify({username: this.props.username})
+        }).then(x=>{
+            return x.text()})
+        .then(response=>{
+        
+            let parsed=JSON.parse(response)
+            console.log(parsed)
+            this.setState({item: parsed})
+        })
 
-    })
-    fetch('/getCart', {
-        method: "POST",
-        headers: {
-            'Content-Type': 'application/json'
-          },
-        body: JSON.stringify({username: this.props.username})
-    }).then(x=>{
-        return x.text()})
-    .then(response=>{
-    
-        let parsed=JSON.parse(response)
-        console.log(parsed)
-        this.setState({item: parsed})
     })
 
 }
