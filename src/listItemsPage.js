@@ -91,28 +91,27 @@ class ListItemsPage extends Component {
                     </div>
                     <br />
                     <div>
-                        What is the Item Title:
+                       Title:
                             <input type='text' onChange={this.handleTitleChange}></input>
                     </div>
                     <br />
                     <div>
-                        Describe the Item:
+                        Description:
                             <textarea type='text' cols='50' rows='4' onChange={this.handleDescriptionChange}></textarea>
                     </div>
                     <br />
                     <div>
-                        What is the Item Price:
+                        Price:
                             <input type='text' onChange={this.handlePriceChange}></input>
                     </div>
                     <br />
-                    <div>
-                        Upload a Picture of the Item
-                            <button>UPLOAD</button>
-                        {/*here find way to add pictures AND TO ADD THEM TO THE STATE*/}
-                    </div>
                     <br />
                     <input className='submitItem' type='submit' value="Ready to List Item!"></input>
                 </form>
+                    <div>
+                        Upload a Picture
+                            <input type='file'/>
+                    </div>
             </div>
         </div>)
     }
