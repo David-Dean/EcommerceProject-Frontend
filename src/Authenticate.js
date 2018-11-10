@@ -58,7 +58,7 @@ class Authentication extends Component{
             let parsedResponse = JSON.parse(resBody)
             if (!parsedResponse.success){
                 //change this to show up next to InputBoxs
-                alert("Username or Password are Incorrect")
+                alert("Incorrect username or password")
             }else 
             this.props.dispatch({type:'loggedIn', username: this.state.usernameInput})
         })
@@ -96,6 +96,7 @@ class Authentication extends Component{
                 </div>)
         } 
         return (<div className='Login'>
+                        <img src='/images/logo.png' />
                         <form onSubmit={this.handleLoginSubmit}>
                             Username
                             <input type='text' onChange={this.handleUsernameChange}/>
