@@ -16,10 +16,6 @@
   z-index: 10;
 }
 
-/* .Signup {
-  z-index: 1;
-} */
-
 #root {
   height: 100%;
 }
@@ -70,7 +66,7 @@ body {
   box-sizing: border-box;
 }
 
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+::-webkit-input-placeholder { 
   font-size: 23px;
 }
 

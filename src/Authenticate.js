@@ -109,7 +109,7 @@ class Authentication extends Component {
                 {/* <div>Username</div> */}
                 <input placeholder='Username' type='text' className='input' onChange={this.handleUsernameChange} />
                 {/* <div>Password</div> */}
-                <input placeholder='Password' type='text' className='input' onChange={this.handlePasswordChange} />
+                <input placeholder='Password' type='password' className='input' onChange={this.handlePasswordChange} />
                 <input type="submit" className='login-button'/>
             </form>
             </div>
