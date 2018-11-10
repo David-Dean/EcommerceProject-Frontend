@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import StripeCheckout from './stripe.js';
 
 class Cart extends Component{
     constructor(props){
@@ -63,9 +64,9 @@ displayItemsInCart(){
 }
 
 subTotal(){
-    let sum= 0;
+    let sum=0;
     for (var i=0; i<this.state.items.length; i++){
-        sum=sum+this.state.items[i].price
+        sum=parseInt(sum)+parseInt(this.state.items[i].price)
     }
     return sum
 }
@@ -77,7 +78,7 @@ calcTaxes(){
 calcTotal(){
     let sum = this.subTotal();
     let taxes = this.calcTaxes();
-    let total = taxes + sum;
+    let total = parseInt(taxes) + parseInt(sum);
     return total
 }
 
@@ -93,10 +94,10 @@ calcTotal(){
 
                     <div className='cartForm'>
                         <form onSubmit={this.submit}>
-                            <div>Subtotal: {this.subTotal()} </div>
-                            <div>Taxes: {this.calcTaxes()} </div>
-                            <div>Total: {this.calcTotal()} </div>
-                            <input type='submit' value='Checkout Now'/>
+                            <div>Subtotal: ${this.subTotal()} </div>
+                            <div>Taxes: ${this.calcTaxes()} </div>
+                            <div>Total: ${this.calcTotal()} </div>
+                            <StripeCheckout/>
                         </form>
                     </div>
                 </div>)
