@@ -47,7 +47,6 @@ remove(itemId){
         body: JSON.stringify({itemId:itemId, username: this.props.username})
     }).then(x=>x.text())
     .then(response=>{
-        let parsed=JSON.parse(response)
         alert("Item Removed from Cart")
         fetch('/getCart', {
             method: "POST",

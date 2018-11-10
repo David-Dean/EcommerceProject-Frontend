@@ -1,35 +1,66 @@
 .App {
   text-align: center;
+  background-image: linear-gradient(rgba(224,224,224,0.3), rgba(224,224,224,0.3)), url(bg.jpg);
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+#root {
+  height: 100%;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+body {
+  height: 100vh;;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.Signup {
 }
 
-.App-link {
-  color: #61dafb;
+.input {
+  font-family: "Roboto", sans-serif;
+  outline: 1;
+  background: #f2f2f2;
+  margin-bottom: 10%;
+  margin-top: 10px;
+  width: 100%;
+  height: 35px;
+  border: 0;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  font-size: 23px;
+  box-sizing: border-box;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-size: 23px;
 }
+
+.form {
+  position: relative;
+  z-index: 1;
+  background: #ffffff;
+  max-width: 360px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 50px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+}
+
+.main-logo {
+  margin-top: 3%;
+  margin-bottom: 6%;
+  width: 50%;
+  margin: 0px;
+}
+
+.signup {
+  margin-bottom: 2%;
+}
+
+
 
 .homepage {
   display: flex;
@@ -95,14 +126,7 @@
 .dropdown-button:focus {
   background-color: #2980B9;
 }
-/* .titleOfListPage{
-  display:flex;
-  position: relative;
-  background-color: white;
-  width: 100%;
-  justify-content: center;
-  align-content: center;
-} */
+
 .submitItem{
   align-content: center
 
