@@ -84,6 +84,7 @@ class Authentication extends Component {
     render() {
         if (this.state.status !== "signed up") {
             return (<div className='Signup'>
+            
                 <img className='main-logo' alt='logo' src='/images/logo.png' />
                 <div className='form'>
                 <form onSubmit={this.handleSignupSubmit} className='register'>
@@ -94,10 +95,10 @@ class Authentication extends Component {
                     <div></div>
                     <input placeholder='Email' type='text' className='input' />
                     <div>
-                    <input type="submit" className='signup' />
+                    <input type="submit" className='signup-button' />
                     </div>
                 </form>
-                <button onClick={this.handleLoginOption}>Already Signed Up?</button>
+                <button className='login-button'onClick={this.handleLoginOption}>Already Signed Up?</button>
                 </div>
             </div>)
         }
@@ -109,7 +110,7 @@ class Authentication extends Component {
                 <input placeholder='Username' type='text' className='input' onChange={this.handleUsernameChange} />
                 {/* <div>Password</div> */}
                 <input placeholder='Password' type='text' className='input' onChange={this.handlePasswordChange} />
-                <input type="submit" />
+                <input type="submit" className='login-button'/>
             </form>
             </div>
         </div>)
