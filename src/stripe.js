@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 import StripeCheckout from 'react-stripe-checkout';
+import './App.css';
+
 
 class App extends Component{
   onToken = (token) => {

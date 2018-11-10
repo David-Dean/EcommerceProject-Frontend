@@ -1,6 +1,8 @@
 import React, {Component} from'react';
 import {connect} from 'react-redux'
 import {Route, BrowserRouter, Link} from 'react-router-dom';
+import './App.css';
+
 
 class Item extends Component{
     constructor(){

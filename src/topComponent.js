@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom'
 import SearchBar from './searchBar.js'
+import './App.css';
+
 
 
 class TopComponent extends Component{

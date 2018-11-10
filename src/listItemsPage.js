@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import './App.css';
+
 
 class ListItemsPage extends Component {
     constructor(props) {
@@ -16,6 +18,7 @@ class ListItemsPage extends Component {
         this.handlePriceChange = this.handlePriceChange.bind(this)
         this.onChange = this.onChange.bind(this)
         this.submit = this.submit.bind(this)
+        this.handleFileChange = this.handleFileChange.bind(this)
     }
     submit(event) {
         event.preventDefault()
@@ -55,6 +58,16 @@ class ListItemsPage extends Component {
         }).then(function (x) {
             return x.text()
         }).then(callback)
+
+        fetch('/profile', {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({image: this.state.file})
+        }).then(function (x){
+            return x.text()
+        }).then()
     }
     onChange(event) {
         this.setState({ category: event.target.value })
@@ -70,7 +83,10 @@ class ListItemsPage extends Component {
     handlePriceChange(event) {
         this.setState({ price: event.target.value })
     }
-    /*HERE HAVE METHOD TO UPDATE PICTURE SOURCE*/
+    handleFileChange(event) {
+        this.setState({ file: event.target.files[0] })
+       
+    }
 
     render() {
         return (<div>
@@ -105,13 +121,13 @@ class ListItemsPage extends Component {
                             <input type='text' onChange={this.handlePriceChange}></input>
                     </div>
                     <br />
+                    <div>
+                        Upload a Picture
+                            <input type='file' onChange={this.handleFileChange}/>
+                    </div>
                     <br />
                     <input className='submitItem' type='submit' value="Ready to List Item!"></input>
                 </form>
-                    <div>
-                        Upload a Picture
-                            <input type='file'/>
-                    </div>
             </div>
         </div>)
     }

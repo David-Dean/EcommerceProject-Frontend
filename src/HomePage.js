@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import TopComponent from './topComponent.js'
+import './App.css';
+
 
 import SideMenu from './sideMenu.js'
 

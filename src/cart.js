@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import StripeCheckout from './stripe.js';
+import './App.css';
+
 
 class Cart extends Component{
     constructor(props){
         super(props);
         this.state={
-            items:[],
+            item:[],
            
         }
         this.subTotal=this.subTotal.bind(this)
@@ -29,7 +31,7 @@ componentDidMount(){
     
         let parsed=JSON.parse(response)
         console.log(parsed)
-        this.setState({items: parsed})
+        this.setState({item: parsed})
     })
 }
 submit(event){
@@ -42,31 +44,45 @@ remove(itemId){
         headers: {
             'Content-Type': 'application/json'
           },
-        body: JSON.stringify({itemId:itemId})
+        body: JSON.stringify({itemId:itemId, username: this.props.username})
     }).then(x=>x.text())
     .then(response=>{
         let parsed=JSON.parse(response)
         alert("Item Removed from Cart")
+
     })
-    //HERE FIX CONTENT OF DISPATCH
+    fetch('/getCart', {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+          },
+        body: JSON.stringify({username: this.props.username})
+    }).then(x=>{
+        return x.text()})
+    .then(response=>{
+    
+        let parsed=JSON.parse(response)
+        console.log(parsed)
+        this.setState({item: parsed})
+    })
 
 }
 displayItemsInCart(){
     
-    return (<div>{this.state.items.map((item) => {
+    return (<div>{this.state.item.map((item) => {
         return (<div>
         <div>{}</div>
         <div>{item.title}</div>
         <div>{item.price}</div>
-        <button onClick={() => this.remove(item.itemId)}>Remove</button>
+        <button onClick={() => {this.remove(item.itemID)}}>Remove</button>
            </div> )
     })}</div>)
 }
 
 subTotal(){
     let sum=0;
-    for (var i=0; i<this.state.items.length; i++){
-        sum=parseInt(sum)+parseInt(this.state.items[i].price)
+    for (var i=0; i<this.state.item.length; i++){
+        sum=parseInt(sum)+parseInt(this.state.item[i].price)
     }
     return sum
 }
@@ -83,7 +99,7 @@ calcTotal(){
 }
 
  render(){
-        if (!this.state.items){return <div>Loading..</div>}
+        if (!this.state.item){return <div>Loading..</div>}
         else
         return( <div className='cart'>
 
