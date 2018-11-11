@@ -56,7 +56,7 @@ class ItemDetails extends Component{
     render(){
         if(this.state.title){
         return (<div className='details'>
-                    <img src={this.state.source} alt='img'></img>
+                    <img src={this.state.source} height='300vh' width='300vh' alt='img'></img>
                     <br/>
                     <div> {this.state.title} </div>
                     <br/>
