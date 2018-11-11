@@ -17,7 +17,9 @@
   border-bottom-right-radius: 8px;
   background-color: #F5F0F6;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.623);
-  width: 180
+  width: 180;
+  height: fit-content;
+  
 }
 
 .sideList {
@@ -140,17 +142,25 @@ font-weight: 100;
   display: flex;
   flex-direction: row;
   flex-wrap:wrap;
+  width: 100%;
 }
 
 /* .side-menu{
   height: 95vh
 } */
 
+
 .item {
   height:300px;
   margin:30px;
-  border-style: solid;
+  border-style: none;
   width: 18vw;
+  overflow: hidden;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.623);
+  background-color: rgb(151, 138, 123);
+  border-radius: 8px;
+  display: grid;
+  text-align: center;
 }
 .list-items{
   display:flex;
@@ -240,6 +250,7 @@ font-weight: 100;
   border-radius: 10px;
   border-style: none;
   background-color: #F5F0F6;
+  font-size: 23px;
 }
 
 .cart {
@@ -263,4 +274,8 @@ font-weight: 100;
 }
 .seller-item-box{
   border: solid;
+}
+
+.user-info {
+  margin-left: 700px;
 }

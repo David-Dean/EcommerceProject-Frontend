@@ -40,16 +40,17 @@ class Profile extends Component{
     }
     render(){
         if (!this.state.listings[0]){return (<div className='page'>Loading..</div>)}
-        return( <div className='page'>
+        return( 
             <div className='user-info'>
                 <div className='profile'>User Information</div>
                  <br/>
                 <div className='profile' >{this.props.user}</div>
                 <br/>
+                <div>Items you're selling:</div>
                 {this.displayListings()}
             </div>
             
-            </div>
+            
         )
     }
 }
