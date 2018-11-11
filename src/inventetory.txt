@@ -63,5 +63,6 @@ FOSSIL
     Dinosaur
     MEGAFAUNA X5
     Exoskeleton
-    rhidono
+    
     mammoth
+    Xiphactinus Rhamphorhynchus Late Cretaceous Fossil - fossil
