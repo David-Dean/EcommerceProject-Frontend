@@ -37,7 +37,7 @@ class SellerProfile extends Component{
     }
     render(){
         if (!this.state.listings[0]){return (<div>Loading..</div>)}
-        return( <div>
+        return( <div className='profile'>
                     <div>Seller Information</div>
                     <div>{this.state.listings[0].username}</div>
                     <div>  {this.displayListings()} </div>

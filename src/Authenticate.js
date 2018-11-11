@@ -88,7 +88,7 @@ class Authentication extends Component {
                 <img className='main-logo' alt='logo' src='/images/logo.png' />
                 <div className='form'>
                 <form onSubmit={this.handleSignupSubmit} className='register'>
-                    <div></div>
+                    <div className='auth'>Signup</div>
                     <input placeholder='Username' className='input' type='text' onChange={this.handleUsernameChange} />
                     <div></div>
                     <input placeholder='Password' type='password' className='input' onChange={this.handlePasswordChange} />
@@ -106,7 +106,7 @@ class Authentication extends Component {
             <img className='main-logo' alt='logo' src='/images/logo.png' />
             <div className='form'>
             <form onSubmit={this.handleLoginSubmit}>
-                {/* <div>Username</div> */}
+                <div className='auth'>Login</div>
                 <input placeholder='Username' type='text' className='input' onChange={this.handleUsernameChange} />
                 {/* <div>Password</div> */}
                 <input placeholder='Password' type='password' className='input' onChange={this.handlePasswordChange} />

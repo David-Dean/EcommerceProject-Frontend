@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
   height: 100%;
@@ -49,6 +50,13 @@ body {
   border-radius: 10px;
 }
 
+.auth {
+margin-bottom: 10%;
+font-size: 40px;
+font-family: 'Roboto', sans-serif;
+font-weight: 100;
+}
+
 .input {
   font-family: "Roboto", sans-serif;
   outline: 1;
@@ -73,14 +81,13 @@ body {
 .form {
   position: relative;
   z-index: 10;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(230, 212, 166, 0.7);
   max-width: 360px;
-  border-style: solid;
-  border-color: black;
-  border-radius: 50px;
+  border-radius: 12px;
   margin: 0 auto 100px;
   padding: 50px;
   text-align: center;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.623);
 }
 
 .main-logo {
@@ -120,7 +127,7 @@ body {
 }
 .top-container-all{
   display: flex;
-  /*position fixed?*/
+  justify-content: flex-end;
   
 }
 .top-container-right{
@@ -160,6 +167,14 @@ body {
 
 .submitItem{
   align-content: center
+}
 
+.details, .listitem, .profile, .cart {
+  margin: auto;
+  border: 10px;
+  align-content: center;
+}
 
+.searchBar {
+  width: 100%;
 }

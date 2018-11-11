@@ -14,8 +14,8 @@ class TopComponent extends Component{
         
                      <div className="top-container-left">
                         <Link to='/'><img height="35px" src='/images/logo.png'/> </Link>
-                         <SearchBar/>
                     </div>
+                         <div className='search'><SearchBar/></div>
                     <div className='top-container-right'>
                         <Link to={'/profile/'+this.props.username}> <button height="35px">MY PROFILE</button> </Link>
                         <Link to={'/cart/'+this.props.username}> <button height="35px" >MY CART</button> </Link>

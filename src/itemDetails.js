@@ -55,7 +55,7 @@ class ItemDetails extends Component{
     }
     render(){
         if(this.state.title){
-        return (<div>
+        return (<div className='details'>
                     {/* <img src={this.state.source} onClick=ZOOM ></img> */}
                     <br/>
                     <div> {this.state.title} </div>

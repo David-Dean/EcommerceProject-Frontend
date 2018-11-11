@@ -33,7 +33,7 @@ class Profile extends Component{
    
     displayListings(){
         
-        return(<div>{this.state.listings.map((item)=> {
+        return(<div className='profile'>{this.state.listings.map((item)=> {
             return(<div>
                 <div>{item.source}</div>
                 <div>{item.title}</div>
@@ -44,7 +44,7 @@ class Profile extends Component{
     }
     render(){
         if (!this.state.listings[0]){return (<div>Loading..</div>)}
-        return( <div>
+        return( <div className='profile'>
             <div>User Information</div>
             <div>{this.props.user}</div>
             <div>  {this.displayListings()} </div>
