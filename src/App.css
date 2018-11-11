@@ -4,6 +4,27 @@
   height: 100%;
 }
 
+.sideli {
+  margin-bottom: 40px;
+  font-size: 25px;
+}
+
+.sideBar {
+  border-style: none;
+  margin: auto;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  background-image: linear-gradient(to bottom right, rgba(187, 138, 46, 0.6), rgba(211, 163, 74, 0.5));
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.623);
+}
+
+.sideList {
+  margin-top: 50px;
+  list-style: none;
+  margin-right: 20px;
+  margin-bottom: 50px;
+}
+
 .bg-image {
   background-image: url(bg1.jpg);
   background-size: cover;
@@ -117,9 +138,9 @@ font-weight: 100;
   flex-wrap:wrap;
 }
 
-.side-menu{
+/* .side-menu{
   height: 95vh
-}
+} */
 
 .item {
   height:200px;
@@ -138,9 +159,7 @@ font-weight: 100;
   display:flex;
   justify-content: flex-start
 }
-.sideList{
-  list-style: none
-}
+
 .list-items{
   display:flex;
   position: relative;
