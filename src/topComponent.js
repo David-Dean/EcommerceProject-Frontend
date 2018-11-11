@@ -13,13 +13,13 @@ class TopComponent extends Component{
         return (<div className='top-container-all' >
         
                      <div className="top-container-left">
-                        <Link to='/'><img height="35px" src='/images/logo.png'/> </Link>
+                        <Link to='/'><img  alt='logo'height="40px" src='/images/logo.png'/> </Link>
                     </div>
                     <div className='search'><SearchBar/></div>
                     <div className='top-container-right'>
-                        <Link to={'/profile/'+this.props.username}> <button height="35px">MY PROFILE</button> </Link>
-                        <Link to={'/cart/'+this.props.username}> <button height="35px" >MY CART</button> </Link>
-                         <Link to='/listItem'><button height='35px'>LIST ITEM</button></Link>
+                        <Link to={'/profile/'+this.props.username}> <button class='btnRight' height="40px">MY PROFILE</button> </Link>
+                        <Link to={'/cart/'+this.props.username}> <button class='btnRight' height="40px" >MY CART</button> </Link>
+                         <Link to='/listItem'><button height='40px' class='btnRight' >LIST ITEM</button></Link>
                     </div>
                 </div>
     
