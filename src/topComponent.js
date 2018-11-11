@@ -10,12 +10,12 @@ class TopComponent extends Component{
     
 
     render(){
-        return (<div className='top-container-all'>
+        return (<div className='top-container-all' >
         
                      <div className="top-container-left">
                         <Link to='/'><img height="35px" src='/images/logo.png'/> </Link>
                     </div>
-                         <div className='search'><SearchBar/></div>
+                    <div className='search'><SearchBar/></div>
                     <div className='top-container-right'>
                         <Link to={'/profile/'+this.props.username}> <button height="35px">MY PROFILE</button> </Link>
                         <Link to={'/cart/'+this.props.username}> <button height="35px" >MY CART</button> </Link>

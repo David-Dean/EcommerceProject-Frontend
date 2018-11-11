@@ -64,7 +64,7 @@ class ListItemsPage extends Component {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({source: this.state.source})
+            body: JSON.stringify({image: this.state.file})
         }).then(function (x){
             return x.text()
         }).then()
@@ -84,12 +84,12 @@ class ListItemsPage extends Component {
         this.setState({ price: event.target.value })
     }
     handleFileChange(event) {
-        this.setState({ source: event.target.files[0] })
+        this.setState({ file: event.target.files[0] })
        
     }
 
     render() {
-        return (<div className='listitem'>
+        return (<div>
             {/* <h1 className='titleOfListPage'>LIST NEW ITEM</h1> */}
             <div className='list-items'>
                 <form onSubmit={this.submit}>

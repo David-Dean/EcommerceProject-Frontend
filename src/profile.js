@@ -35,7 +35,7 @@ class Profile extends Component{
         
         return(<div className='profile'>{this.state.listings.map((item)=> {
             return(<div>
-                <div>{item.source}</div>
+                {/* <div>{item.source}</div> */}
                 <div>{item.title}</div>
                 <div>{item.price}</div>
             </div>)
@@ -46,6 +46,7 @@ class Profile extends Component{
         if (!this.state.listings[0]){return (<div>Loading..</div>)}
         return( <div className='profile'>
             <div>User Information</div>
+            <br/>
             <div>{this.props.user}</div>
             <div>  {this.displayListings()} </div>
             </div>

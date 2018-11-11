@@ -3,15 +3,15 @@ import {connect} from 'react-redux'
 import {Route, BrowserRouter, Link} from 'react-router-dom';
 import './App.css';
 
-
 class Item extends Component{
     constructor(){
         super();
-        this.state={}
+        this.state={
+            
+        }
         
     }
 
-    
     render(){
         return (<div className='item'>
                     <div>{this.props.title}</div>
