@@ -4,20 +4,20 @@ MASKS
 
 1. 
     {
-    catergory: masks
-    title: Takrur Ceremonial Mask
-    description: Wooden Mask from Takrur Kingdom, c.12th century CE, Origin: Unknown
-    price: 500
-    source: mask1.png
+    "catergory": "masks",
+    "title": "Takrur Ceremonial Mask",
+    "description": "Wooden Mask from Takrur Kingdom, c.12th century CE, Origin: Unknown",
+    "price": "500",
+    "source": "mask1.png"
     }
 
 2.
      {
-    catergory: masks
-    title: Mossi Ceremonial Mask
-    description: Wooden Mask from Mossi Empire, c.15th century CE, Origin: Luba Fields, Ghana
-    price: 500
-    source: mask2.png
+    "catergory": "masks"
+    "title": "Mossi Ceremonial Mask"
+    "description": "Wooden Mask from Mossi Empire, c.15th century CE, Origin: Luba Fields, Ghana"
+    "price": "500"
+    "source": "mask2.png"
     }
 3. 
     {

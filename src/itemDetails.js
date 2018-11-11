@@ -49,14 +49,14 @@ class ItemDetails extends Component{
             category: parsed.category,
             itemId:parsed.itemID,
             soldBy: parsed.username, 
-            // source: parsed.source
+            source: parsed.source
         })
         }.bind(this))
     }
     render(){
         if(this.state.title){
         return (<div className='details'>
-                    {/* <img src={this.state.source} onClick=ZOOM ></img> */}
+                    <img src={this.state.source} alt='img'></img>
                     <br/>
                     <div> {this.state.title} </div>
                     <br/>

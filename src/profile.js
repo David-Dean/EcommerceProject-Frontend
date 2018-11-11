@@ -30,7 +30,7 @@ class Profile extends Component{
         
         return(<div className='profile'>{this.state.listings.map((item)=> {
             return(<div>
-                {/* <div>{item.source}</div> */}
+                <div>{item.source}</div>
                 <div>{item.title}</div>
                 <div>{item.price}</div>
             </div>)

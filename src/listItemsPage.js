@@ -89,7 +89,7 @@ class ListItemsPage extends Component {
     }
 
     render() {
-        return (<div className='page'>
+        return (<div className=''>
             {/* <h1 className='titleOfListPage'>LIST NEW ITEM</h1> */}
             <div className='list-items'>
                 <form onSubmit={this.submit}>

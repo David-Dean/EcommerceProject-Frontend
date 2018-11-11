@@ -73,6 +73,7 @@ displayItemsInCart(){
         <div>{}</div>
         <div>{item.title}</div>
         <div>{item.price}</div>
+        <div>{item.source}</div>
         <button onClick={() => {this.remove(item.itemID)}}>Remove</button>
            </div> )
     })}</div>)
