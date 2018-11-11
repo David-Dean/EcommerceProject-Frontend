@@ -26,11 +26,12 @@ class SellerProfile extends Component{
     })}
    
     displayListings(){
-        return(<div>{this.state.listings.map((item)=> {
-            return(<div>
-                <div>{item.source}</div>
-                <div>{item.title}</div>
-                <div>{item.price}</div>
+        return(<div className='seller-items'>{this.state.listings.map((item)=> {
+            return(<div className='seller-item-box'>
+                
+                <div className="seller-item-info">{item.title}</div>
+                <div className="seller-item-info">{item.price}</div>
+                <img height="200px"  src={item.source} ></img>
             </div>)
         })}</div>)
 
@@ -38,9 +39,12 @@ class SellerProfile extends Component{
     render(){
         if (!this.state.listings[0]){return (<div>Loading..</div>)}
         return( <div className='profile'>
-                    <div>Seller Information</div>
-                    <div>{this.state.listings[0].username}</div>
-                    <div>  {this.displayListings()} </div>
+                    <div className='profile'> Information</div>
+                    <br/>
+                    <div className='profile'>Name of Seller {this.state.listings[0].username}</div>
+                    <br/>
+                    <div className='profile'> Items Listed:</div>
+                    <div> {this.displayListings()} </div>
                 </div>
         )
 

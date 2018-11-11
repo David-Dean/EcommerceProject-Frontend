@@ -71,9 +71,9 @@ displayItemsInCart(){
     return (<div>{this.state.item.map((item) => {
         return (<div>
         <div>{}</div>
-        <div>{item.title}</div>
-        <div>{item.price}</div>
-        <div>{item.source}</div>
+        <div className='seller-item-info'>{item.title}</div>
+        <div className='seller-item-info' >{item.price}</div>
+        <img className='item-image'src={item.source}></img>
         <button onClick={() => {this.remove(item.itemID)}}>Remove</button>
            </div> )
     })}</div>)
@@ -103,16 +103,20 @@ calcTotal(){
         else
         return( <div className='cart'>
 
-                    <div  className=''>
+                    <div  className='profile'>
                         Items in Cart:
-                        {this.displayItemsInCart()}
+                        <br/>
+                        <div className='seller-item-box'>{this.displayItemsInCart()}</div>
                     </div>
 
                     <div className=''>
                         <form onSubmit={this.submit}>
-                            <div>Subtotal: ${this.subTotal()} </div>
-                            <div>Taxes: ${this.calcTaxes()} </div>
-                            <div>Total: ${this.calcTotal()} </div>
+                            <div className='seller-item-info'>Subtotal: ${this.subTotal()} </div>
+                            <br/>
+                            <div className='seller-item-info'>Taxes: ${this.calcTaxes()} </div>
+                            <br/>
+                            <div className='seller-item-info' >Total: ${this.calcTotal()} </div>
+                            <br/>
                             <StripeCheckout/>
                         </form>
                     </div>

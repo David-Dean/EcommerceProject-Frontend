@@ -36,7 +36,7 @@ render(){
                         title={item.title}
                         description={item.description}
                         price={item.price}
-                        source={'/images/africanMask.jpg'}
+                        source={item.source}
                         itemId={item.itemID} />)
                 })}
     </div>)
