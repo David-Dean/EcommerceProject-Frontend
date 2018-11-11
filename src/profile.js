@@ -2,10 +2,6 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import './App.css';
 
-
-
-
-
 class Profile extends Component{
     constructor(props){
         super(props);
@@ -13,7 +9,6 @@ class Profile extends Component{
             listings:[]
         }
     }
-
 
     componentDidMount(){
         let callback =function(response){
@@ -45,9 +40,9 @@ class Profile extends Component{
     render(){
         if (!this.state.listings[0]){return (<div>Loading..</div>)}
         return( <div className='profile'>
-            <div>User Information</div>
-            <br/>
+          
             <div>{this.props.user}</div>
+            <br/>
             <div>  {this.displayListings()} </div>
             </div>
         )

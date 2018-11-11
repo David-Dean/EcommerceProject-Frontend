@@ -1,68 +1,257 @@
-MEGAFAUNA
 
-    Mammuthus meridionalis Woolly mammoth Steppe mammoth Extinction Elephantidae - mammoth
-    
-    White lion Felidae Stock photography Roar - Lion
-    
-    Javan rhinoceros Northern white rhinoceros Southern white rhinoceros Indian rhinoceros - Rhino PNG
-    
-    Tyrannosaurus Ian Malcolm Spinosaurus Velociraptor Triceratops - Dinosaur animals
-    
-    Komodo dragon Komodo Edit Comodo Group - Komodo Dragon Free Download Png
-    
-    Lizard Reptile Snake Pet Chameleons - Lizard Transparent Background
-    
-    Linnaeus's two-toed sloth Hoffmann's two-toed sloth Stock photography Three-toed sloth - sloth
-    
-    Beaver Bear Mammal Miocene Homalodotherium - beaver
-    
-    
-    North American Beaver
-    
-    Megalonyx Giant ground sloth Glyptodon Hoffmann's two-toed sloth - Megalonyx
-    
-    Glyptodon Turtle Exoskeleton Vertebrate Reptile - exo skeleton
-    
-    Bird Kelenken guillermoi Phorusrhacos Dinosaur Titanis - argentavis magnificens
-    
-    Skeletal system of the horse Skeleton Spinosaurus Bone - Skeleton
-    
-    Sonora Dark Horn Adventures Deer Desert bighorn sheep Goat - sheep horns
-    
 
 MASKS
-    China Mask Peking opera - China Wind Face Mask
-    Ancient Egypt Mask Bastet Egyptian language - Vector Egyptian mask
-    Traditional African masks African art Luba people - Africa
-    X2
-    NATIVE
-    X3
-    Egypt Clip art - Ancient Egypt antelope Accessories
 
-VASES
-    Pottery of ancient Greece Greek Vase-painting Black-figure pottery Greek Pottery - vase
+1. 
+    {
+    catergory: masks
+    title: Takrur Ceremonial Mask
+    description: Wooden Mask from Takrur Kingdom, c.12th century CE, Origin: Unknown
+    price: 500
+    source: mask1.png
+    }
 
-    Alabastron Attica Black-figure pottery Greek White ground technique - antiquity objects
+2.
+     {
+    catergory: masks
+    title: Mossi Ceremonial Mask
+    description: Wooden Mask from Mossi Empire, c.15th century CE, Origin: Luba Fields, Ghana
+    price: 500
+    source: mask2.png
+    }
+3. 
+    {
+    catergory: masks
+    title: Malinese Ceremonial Mask
+    description: Bronze Mask from Mali Empire, c. 11th century CE, Origin: Mali
+    price: 800
+    source: mask3.png
+    }
+4.
+    {
+    catergory: masks
+    title: Haida War Mask
+    description: Wooden Mask from Haida People of British Columbia, c.1750 CE, Origin: British Columbia, Canada
+    price: 1200
+    source: mask4.png
+    }
+5. 
+    {
+    catergory: masks
+    title: Tlingit Shaman Mask
+    description: Wooden Mask from Tlingit People of Oregon, believed to be used for shamanist rituals, c. 1750 CE, Origin: Oregon State
+    price: 1200
+    source: mask5.png
+    }
+6. 
+    {
+    catergory: masks
+    title: Tlihgit Ceremonial Mask
+    description: Wooden Mask from Tlingit People of Oregon, believed to be used for ceremonial purposes, c. 1800CE, Origin: Oregon State
+    price: 1250
+    source: mask6.png
+    }
+7. 
+    {
+    catergory: masks
+    title: Edo Pediod Mask
+    description: Clay Japanese Mask from Edo Period, c.16th century CE, Origin: Japan
+    price: 2200
+    source: mask7.png
+    }
+8.  
+    {
+    catergory: masks
+    title: Chinese Opera Mask
+    description: Wooden Chinese Opera Mask, Painted, c.17 century CE, Origin: Beijing, China
+    price: 2000
+    source: mask8.png
+    }
 
-    Qing dynasty Porcelain Vase Chinese ceramics Falangcai - Exquisite vase
 
-    Jingdezhen Blue and white pottery Vase Chinese ceramics - blue and white porcelain
+    VASES
+1. 
+    {
+    catergory: vases
+    title: French Urn
+    description: Gold-plated and Cermaic Urn from the court of Louis XIV, c.1720 CE, Origin: France
+    price: 2000
+    source: vase1.png
+    }
 
-    Nelson-Atkins Museum of Art Vase Ceramic Song dynasty - vase
+2.
+     {
+    catergory: vases
+    title: Japanese Vase
+    description: Ceramic and fired-glaze, Japanese late Edo period, c.1800 CE, Origin: Nhkata District, Japan
+    price: 1600
+    source: vase2.png
+    }
+3. 
+    {
+    catergory: vases
+    title: Ming Ceramic Vase
+    description: Jingdezhen Blue and white pottery, c.10th century CE, Origin: Ghanghou, China
+    price: 2600
+    source: vase3.png
+    }
+4.
+    {
+    catergory: vases
+    title: Qing Dynasty Vase
+    description: Qing dynasty Porcelain Vase Chinese, late Qing c.6th century CE, Origin: Xian, China
+    price: 3800
+    source: vase4.png
+    }
+5. 
+    {
+    catergory: vases
+    title: Qing Dynasty Urn
+    description: Ceramic Urn found in the tomb of late Qing Empire Concubine, c.7th century CE, Origin: Xian, China
+    price: 3500
+    source: vase5.png
+    }
+6. 
+    {
+    catergory: vases
+    title: Roman Wine Jug
+    description: Ceramic Jug used to transport wine accross Mediterranean Sea, c.2nd century CE, Origin: Plaxos, Italy
+    price: 2000
+    source: vase6.png
+    }
+7. 
+    {
+    catergory: vases
+    title: Greek Decorative Vase
+    description: Painted Ceramic Vase depicting figures, c.6th century BCE, Origin: Lesbos, Greece
+    price: 2700
+    source: vase7.png
+    }
+8.  
+    {
+    catergory: vases
+    title: Greek Decorative Vase
+    description: Alabastron Attica Black-figure pottery, c.5th century BCE, Origin: Athens, Greece
+    price: 2700
+    source: vase8.png
+    }
 
-    National Archaeological Museum, Athens Ancient Greece Archaic Greece History of art - Geometric textures Tao Pin
+STATUES
 
-    Pickled cucumber Tursu Pickling Ceramic - Ceramic pickle jar Korean 14th century
-    X   
+1. 
+    {
+        category: statues 
+        title: Roman Bronze Statue
+        description: Bronze Statue of Marcus Orellius, c.1st century CE, Origin: Rome, Italy
+        price: 4000
+        source: statue1.jpg
+    }
+2.
+    {
+        category: statues 
+        title: Golden Ming Figure
+        description: Solid-gold 18inch figurine from Ming Empire, c. 11th century CE, Origin: Xiamen, China
+        price: 8000
+        source: statue2.jpg
+    }
+3.
+    {
+        category: statues 
+        title:  Krishna Figure
+        description: Carved of Lignite/Marble, c.16th century CE, Origin: Karnataka, India
+        price: 3000
+        source: statue3.png
+    }
+4.  
+    {
+        category: statues 
+        title: Angel of Redemption
+        description: Stone Carved Angel from Notre-Dame Catherdral in Paris, France
+        price: 2000
+        source: statue4.png
+    }
+5. {
+        category: statues 
+        title: Cherub Angel 
+        description: Marble Carved Cherub Angel from the fountain of Love, Naples, c. 15th century CE, Origin: Naples, Italy
+        price: 2300
+        source: statue5.png
+    }
+
+6. {
+        category: statues 
+        title: Golden Cobras
+        description: Egyptian golden cobras, likely from early Upper Kindgom c. 13th BCE, Origin: Nile Delta, Egypt
+        price: 2300
+        source: statue6.png
+    }
+
+
+fossils
+
+1. {
+        category: fossils 
+        title: Juvenile Mammoth  
+        description: Complete set of bones of young Mammoth, c. 5th century BCE, Origin: Siberia, Russia
+        price: 30000
+        source: fossil1.jpg
+    }
+2. {
+        category: fossils 
+        title: Adult Mammoth 
+        description: PErfectly preserved complete set of bones of large adult Mammoth, , c. 5th century BCE, Origin: Siberia, Russia
+        price: 50000
+        source: fossil2.png
+    }
+3. {
+        category: fossils 
+        title: Extinct White Rhinoserous 
+        description: Remains of last member of White Rhino Species, c.2000, Origin: Tanzania
+        price: 23000
+        source: fossil3.png
+    }
+
+4. {
+        category: fossils 
+        title: Dire Wolf 
+        description: Complete skeleton of Dire Wolf, c. 10th century BCE, Origin: Glasgow, Scotland
+        price: 15000
+        source: fossil4.jpg
+    }
+5. {
+        category: fossils 
+        title: Dodo Bird
+        description: Remains of Last Dodo Bird known to Man, c.1780, Origin: London, England
+        price: 11000
+        source: fossil5.jpg
+    }
+6. {
+        category: fossils 
+        title: Giant Ground Sloth 
+        description: Giant Ground Sloth, known to live in caves and jungles throughout central America, c. 10th century BCE, Origin: Havana, Cuba
+        price: 26000
+        source: fossil6.jpg
+7. {
+        category: fossils 
+        title: Tyrannosaurus Skull
+        description: 48 inches and 500lbs, Late Triassic Period, Origin: South Dekota, USA
+        price: 34000
+        source: fossil7.png
+    8. {
+        category: fossils 
+        title: Full Tyrannosaurus 
+        description: Courtesy of the Smithosian Institute, this is the first complete Tyrannosaurus skeleton ever discovered, c. 1915, Origin: Shunyon, Korea
+        price: 89000
+        source: fossil8.png
+    9. {
+        category: fossils 
+        title: Live Tyrannosaurus
+        description: Yes, we brought it back to life. c. 2019 Origin: Montreal, Canade
+        price: 1000000
+        source: fossil9.png
+    }
     
-    
 
-FOSSIL
-    AMANAITE
-    Fossil Reptile Ammonites Paleontology Reptilien, Amphibien & Fische - dinosaur fossils
-    Dinosaur
-    MEGAFAUNA X5
-    Exoskeleton
+
     
-    mammoth
-    Xiphactinus Rhamphorhynchus Late Cretaceous Fossil - fossil
+ 

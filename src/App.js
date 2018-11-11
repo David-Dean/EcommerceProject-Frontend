@@ -98,12 +98,13 @@ class App extends Component {
                 <Route exact path='/searchResults' render={this.renderSearchResults} />
                 <Route exact path='/categories/:category' render={this.renderCategory} />
                 <Route exact path='/itemDescription/:itemId' render={this.renderDescription} />
+                <Route exact path='/sellerProfile/:seller' render={this.renderSellerProfile} />
+                <Route exact path='/profile/:username' render={this.renderProfile} />
+                <Route exact path='/cart/:username' render={this.renderCart} />
+                <Route exact path='/listItem' render={this.renderListItem} />
               </div>
             </div>
-            <Route exact path='/sellerProfile/:seller' render={this.renderSellerProfile} />
-            <Route exact path='/profile/:username' render={this.renderProfile} />
-            <Route exact path='/cart/:username' render={this.renderCart} />
-            <Route exact path='/listItem' render={this.renderListItem} />
+            
           </div>
 
         </div>

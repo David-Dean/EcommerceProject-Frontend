@@ -29,7 +29,7 @@ differentFunction(){
 
 render(){
     this.differentFunction()
-    return (<div>
+    return (<div className='list-items'>
                 {this.state.items.map(function(item){
                     return (<Item
                         category={item.category}
