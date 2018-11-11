@@ -102,12 +102,12 @@ calcTotal(){
         else
         return( <div className='cart'>
 
-                    <div  className='itemsDisplay'>
+                    <div  className=''>
                         Items in Cart:
                         {this.displayItemsInCart()}
                     </div>
 
-                    <div className='cartForm'>
+                    <div className=''>
                         <form onSubmit={this.submit}>
                             <div>Subtotal: ${this.subTotal()} </div>
                             <div>Taxes: ${this.calcTaxes()} </div>
