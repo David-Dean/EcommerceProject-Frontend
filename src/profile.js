@@ -31,7 +31,7 @@ class Profile extends Component{
         return(<div className='profile'>{this.state.listings.map((item)=> {
             return(<div className='seller-item-box'>
                 <div className='.seller-item-info'>{item.title}</div>
-                <div className='.seller-item-info'>{item.price}</div>
+                <div className='.seller-item-info'>${item.price}</div>
                 <img className='item-image'  src={item.source}></img>
                 
             </div>)

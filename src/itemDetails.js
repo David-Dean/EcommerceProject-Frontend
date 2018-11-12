@@ -56,7 +56,7 @@ class ItemDetails extends Component{
     render(){
         if(this.state.title){
         return (<div className='details'>
-                    <img src={this.state.source} height='300vh' width='300vh' alt='img'></img>
+                    <img src={this.state.source} width='300px' height='300px' className='detailImg' alt='img'></img>
                     <br/>
                     <div> {this.state.title} </div>
                     <br/>
@@ -65,7 +65,7 @@ class ItemDetails extends Component{
                     <div> Price: {this.state.price} $ </div>
                     <br/>
                     <div>Sold by: <Link to={`/sellerProfile/${this.state.soldBy}`}>{this.state.soldBy}</Link></div>
-                    <button  onClick={this.addToCart} >ADD TO CART</button>
+                    <button  onClick={this.addToCart} className='addToCart' >ADD TO CART</button>
         </div>)      
     }return (<div>Loading...</div>)
 }}

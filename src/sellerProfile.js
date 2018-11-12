@@ -30,7 +30,7 @@ class SellerProfile extends Component{
             return(<div className='seller-item-box'>
                 
                 <div className="seller-item-info">{item.title}</div>
-                <div className="seller-item-info">{item.price}</div>
+                <div className="seller-item-info">${item.price}</div>
                 <img height="200px"  src={item.source} ></img>
             </div>)
         })}</div>)
@@ -38,12 +38,12 @@ class SellerProfile extends Component{
     }
     render(){
         if (!this.state.listings[0]){return (<div>Loading..</div>)}
-        return( <div className='profile'>
-                    <div className='profile'> Information</div>
+        return( <div className='seller-profile'>
+                    <div > Information</div>
                     <br/>
-                    <div className='profile'>Name of Seller {this.state.listings[0].username}</div>
+                    <div >Name of Seller: {this.state.listings[0].username}</div>
                     <br/>
-                    <div className='profile'> Items Listed:</div>
+                    <div > Items Listed:</div>
                     <div> {this.displayListings()} </div>
                 </div>
         )

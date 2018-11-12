@@ -15,11 +15,11 @@
   /* margin: auto; */
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
-  background-color: #F5F0F6;
+  background-color: #CBC6BD;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.623);
   width: 180;
   height: fit-content;
-  
+  font-family: monospace;
 }
 
 .sideList {
@@ -45,11 +45,20 @@
 }
 
 #root {
+  height: 210%;
+  width: 100%;
+  background-color: #DCD9D4; 
+  background-image: linear-gradient(to bottom, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%), radial-gradient(at 50% 0%, rgba(255,255,255,0.10) 0%, rgba(0,0,0,0.50) 50%); 
+  background-blend-mode: soft-light,screen;
+  background-size: cover;
+}
+
+html {
   height: 100%;
 }
 
 body {
-  height: 100vh;;
+  height: 100%;
 }
 
 .signup-button {
@@ -145,9 +154,6 @@ font-weight: 100;
   width: 100%;
 }
 
-/* .side-menu{
-  height: 95vh
-} */
 
 
 .item {
@@ -157,39 +163,39 @@ font-weight: 100;
   width: 18vw;
   overflow: hidden;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.623);
-  background-color: rgb(151, 138, 123);
+  background-color: #EDE5D8;
   border-radius: 8px;
   display: grid;
   text-align: center;
+  font-family: monospace;
+  font-size: 19px;
+  padding: 10px;
 }
-.list-items{
-  display:flex;
-  position: relative;
-  background-color: white;
-  width: 100%;
-  height: 95vh;
-  justify-content: center;
-  align-content: center;
-}
+
 .top-container-all{
   display: flex;
   justify-content: space-between;
-  width: 100vw
+  width: 100vw;
+  margin-top: 10px;
+  margin-right: 10px;
 }
 .top-container-right{
  
   display: flex;
 }
-.top-container-left{
-  
-  /* justify-content: flex-start */
-}
+
 
 .btnRight {
+	box-shadow: 0px 10px 14px -7px #6e5d2ed0;
+	background:linear-gradient(to bottom, #8a8469 5%, #ac8b4f 100%);
+	border-radius:8px;
   height: 40px;
-  border-radius: 7px;
   background-color: #8A897C;
-  border-style: solid;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #6f7e83;
+  margin-left: 5px;
+  margin-right: 2px;
+  font-family: monospace;
 }
 
 .searchContainer {
@@ -206,11 +212,7 @@ font-weight: 100;
   height: 40px;
 }
 
-.list-items{
-  display:flex;
-  justify-content: center;
-  align-content: center;
-}
+
 .dropdown {
   position: relative;
   display: inline-block;
@@ -231,12 +233,6 @@ font-weight: 100;
   align-content: center
 }
 
-/* .details, .listitem, .profile, .cart {
-  margin: auto;
-  border: 10px;
-  align-content: center;
-} */
-
 .page {
   position: absolute;
     
@@ -248,22 +244,29 @@ font-weight: 100;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
-  border-style: none;
-  background-color: #F5F0F6;
+  border-style: solid;
+  background-color: rgb(247, 243, 226);
   font-size: 23px;
+  border-color: darkgoldenrod;
+  text-indent: 9px;
+  font-family: monospace;
 }
 
-.cart {
+.cart, .list-items, .details, .seller-profile{
   position: absolute;
-    left: 25%;
-    
-   
+    left: 40%;
     display: flex;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.623);
+    background-color: #EDE5D8;
+    border-radius: 8px;
+    display: grid;
+    text-align: center;
+    font-family: monospace;
+    font-size: 19px;
+    padding: 20px;
 }
 
-.profile {
-  font-size: 150%
-}
+
 
 .seller-item-info{
   font-size: 105%
@@ -272,10 +275,49 @@ font-weight: 100;
 .item-image{
   height: 200px
 }
-.seller-item-box{
-  border: solid;
-}
 
 .user-info {
-  margin-left: 700px;
+  left: 40%;
+  position: absolute;
+  text-align: center;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.623);
+    background-color: #EDE5D8;
+    border-radius: 8px;
+    display: grid;
+    text-align: center;
+    font-family: monospace;
+    font-size: 19px;
+    padding: 20px;
+}
+
+.detailImg {
+  margin: auto;
+}
+
+.details {
+  left: 25% !important;
+}
+
+.addToCart {
+  width: 170px;
+  height: 60px;
+  font-size: 20px;
+  font-family: monospace;
+  margin: auto;
+  margin-top: 15px;
+	box-shadow:inset 0px 1px 0px 0px #a6827e;
+	background:linear-gradient(to bottom, #7d5d3b 5%, #634b30 100%);
+	background-color:#7d5d3b;
+	border-radius:3px;
+  border:1px solid #54381e;
+  color: white;
+}
+
+.addToCart:hover {
+	background:linear-gradient(to bottom, #634b30 5%, #7d5d3b 100%);
+	background-color:#634b30;
+}
+.addToCart:active {
+  position:relative;
+	top:1px;
 }
