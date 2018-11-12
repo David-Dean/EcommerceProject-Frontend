@@ -31,13 +31,15 @@ render(){
     this.differentFunction()
     return (<div className='list-items'>
                 {this.state.items.map(function(item){
-                    return (<Item
+                    return (<div> {item.category}
+                        <Item
                         category={item.category}
                         title={item.title}
                         description={item.description}
                         price={item.price}
                         source={item.source}
-                        itemId={item.itemID} />)
+                        itemId={item.itemID} />
+                        </div>)
                 })}
     </div>)
     }
